@@ -38,11 +38,9 @@ let valueM = +prompt('Enter value M. It should be integer number too');
 while (!Number.isInteger(valueM)) {
     valueM = prompt('Number must be integer');
 }
-const wrongInput = valueN >= valueM ? prompt(`Number M must be more than number N. Press F5 and try again!`) : isPair;
-
 let isPair = confirm('Would we do miss even numbers?');
 
-
+const wrongInput = valueN >= valueM ? prompt(`Number M must be more than number N. Press F5 and try again!`) : isPair;
 
 let numbersSum = 0;
 
