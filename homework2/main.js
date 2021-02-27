@@ -1,19 +1,24 @@
 'use strict';
 
+let valueN = +prompt('Enter value N. It should be integer number');
+while (!Number.isInteger(valueN) || valueN === 0) {
+    valueN = +prompt('Enter an integer start number, please');
+}
 
-const valueN = parseInt(prompt('Enter value N. It should be integer number'));
-Number.isInteger(valueN) === true ? alert(`Number N is ${valueN}.`) : alert(`Wrong input of number N. Try again!`);
+let valueM = +prompt('Enter value M. It should be integer number too');
+while (!Number.isInteger(valueM) || valueN >= valueM || valueM === 0) {
+    if (valueN >= valueM) {
+        valueM = +prompt('Enter a valueM greater that a N value');
+    } else {
+        valueM = +prompt('Enter an integer valueM');
+    }
+}
 
-const valueM = parseInt(prompt('Enter value M. It should be integer number too'));
-Number.isInteger(valueM) === true ? alert(`Number M is ${valueM}.`) : alert(`Wrong input of number M. Try again!`);
-
-let isPair = confirm('Would we do miss even numbers?') ? true : false;
-
-const wrongInput = valueN >= valueM ? alert(`Number M must be more than number N. Press F5 and try again!`) : isPair;
+let isPair = confirm('Would we do miss even numbers?');
 
 let numbersSum = 0;
 
-if (isPair === true) {
+if (isPair) {
     for (let i = valueN; i <= valueM; i++) {
         if (i % 2 != 0) {
             numbersSum += i;
@@ -25,7 +30,6 @@ if (isPair === true) {
     }
 }
 document.writeln(`Amount of numbers from ${valueN} to ${valueM} (included) is ${numbersSum}.`);
-
 
 
 
