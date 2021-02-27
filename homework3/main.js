@@ -87,5 +87,51 @@ const convertCurrency = function (money) {
 }
 console.log(convertCurrency('3600uah'));
 
+//8 
+
+const getRandomPwd = function (digitsQuantity) {
+    let pwd = ' ';
+    const digits = '0123456789';
+
+    for (let i = 0; i < digitsQuantity; i++) {
+        if (digitsQuantity === ' ') {
+            digitsQuantity === '8';
+            pwd += digits.charAt(Math.floor(Math.random() * digitsQuantity.length));
+            return pwd;
+        }
+        pwd += digits.charAt(Math.floor(Math.random() * digits.length));
+    } return pwd;
+}
+console.log(getRandomPwd(9));
+
+//9 I don`t understand why I can`t split arrText to parts and delete arrPt...
+const deleteLetters = function (letter, text) {
+
+    let counter = 0;
+    let arrText = Array(text);
+
+    for (let i = 0; i < arrText.lengh; i++) {
+        let arrPt = charAt(i);
+        if (arrPt[i] === letter) {
+            counter++;
+        } arrText = arrPt[i].replace(counter++, '');
+    } return arrText;
 
 
+}
+console.log(deleteLetters('a', 'abbababgalamaga'));
+
+//10 Again I don`t undersatnd why it`s not work! :((((((
+const isPalyndrom = function (text) {
+    let reverse = function (text) {
+        reverseString(text);
+    }
+    if (text === reverse) {
+        true;
+    } else {
+        false;
+    }
+}
+console.log(isPalyndrom('tenet'));
+
+//11 The same reason like function #9 I can`t build right function #11
