@@ -135,3 +135,15 @@ const isPalyndrom = function (text) {
 console.log(isPalyndrom('tenet'));
 
 //11 The same reason like function #9 I can`t build right function #11
+
+document.writeln(`Функция №1 ${maxDigit(1236345342657)}`);
+document.writeln(`Функция №2 ${degreeOf(7, 3)}`);
+document.writeln(`Функция №3 ${toUpper(`kolya`)}`);
+document.writeln(`Функция №4 ${taxSubtraction(15000)}`);
+document.writeln(`Функция №5 ${getRandomNumber(1, 355)}`);
+document.writeln(`Функция №6 ${countLetter('s', 'success')}. К сожалению не работает.`);
+document.writeln(`Функция №7 ${convertCurrency('3600uah')}. К сожалению не работает.`);
+document.writeln(`Функция №8 ${getRandomPwd(9)}`);
+document.writeln(`Функция №9 ${deleteLetters('a', 'abbababgalamaga')}. К соажлению, не работает :(`);
+document.writeln(`Функция №10 ${isPalyndrom('tenet')}. К сожалению, не работает :(`);
+document.writeln(`Функция №11. Даже не знаю с чего начать так как функция 9 не работает.`);
