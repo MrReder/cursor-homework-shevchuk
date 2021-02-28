@@ -82,7 +82,7 @@ const convertCurrency = function (money) {
         converted = parseInt(arr) / for1buck;
         return converted;
     } else {
-        document.writeln(`Input correct currency!`);
+        console.log(`Input correct currency!`);
     }
 }
 console.log(convertCurrency('3600uah'));
@@ -136,9 +136,9 @@ console.log(isPalyndrom('tenet'));
 
 //11 The same reason like function #9 I can`t build right function #11
 
-document.writeln(`Функция №1 ${maxDigit(1236345342657)}`);
-document.writeln(`Функция №2 ${degreeOf(7, 3)}`);
-document.writeln(`Функция №3 ${toUpper(`kolya`)}`);
+document.writeln(`Функция №1 ${maxDigit(1236345342657)} <br> `);
+document.writeln(`Функция №2 ${degreeOf(7, 3)} <br> `);
+document.writeln(`Функция №3 ${toUpper(`kolya`)} <br> `);
 document.writeln(`Функция №4 ${taxSubtraction(15000)}`);
 document.writeln(`Функция №5 ${getRandomNumber(1, 355)}`);
 document.writeln(`Функция №6 ${countLetter('s', 'success')}. К сожалению не работает.`);
