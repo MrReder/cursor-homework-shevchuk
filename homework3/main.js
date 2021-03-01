@@ -64,22 +64,22 @@ console.log(countLetter('s', 'success'));
 //7 I don`t know why it`s not work
 
 const convertCurrency = function (money) {
-    let arr = Array(money);
+    let arr = money.split(' , ').join(' , ');
     const usa = arr.includes('$');
-    const ua = arr.includes('uah');
+    const ua = arr.includes('uah') || arr.includes('UAH');
     const for1buck = 28;
     let converted = 0;
     if (usa) {
-        converted = parseInt(arr) * for1buck;
+        converted = (parseInt(arr) * for1buck).toFixed(2);
         return converted;
     } else if (ua) {
-        converted = parseInt(arr) / for1buck;
+        converted = (parseInt(arr) / for1buck).toFixed(2);
         return converted;
     } else {
         console.log(`Input correct currency!`);
     }
 }
-console.log(convertCurrency('3600uah'));
+console.log(convertCurrency('547$'));
 
 //8 
 
@@ -115,12 +115,12 @@ console.log(isPalyndrom('tenet'));
 //11
 const deleteDuplicateLetter = function (text) {
     let counter = 0;
-    Array(text);
-    let arr = text.split(' , ').join(" ");
-    for (let i = 0; i < text.length; i++) {
+    let arr = text.split('');
+    console.log(arr);
+    for (let i = 0; i < arr.length; i++) {
         counter++;
-        if (arr[i] === counter > 1) {
-            return arr;
+        if (arr[i] === counter && counter > 1) {
+            return arr.splice(i);
         }
 
     }
@@ -135,7 +135,7 @@ document.writeln(`Функция №3 ${formatName(`kolya`)} <br> `);
 document.writeln(`Функция №4 ${substractTax(15000)} <br> `);
 document.writeln(`Функция №5 ${getRandomNumber(1, 355)} <br> `);
 document.writeln(`Функция №6 ${countLetter('s', 'success')}<br> `);
-document.writeln(`Функция №7 ${convertCurrency('3600uah')}. К сожалению не работает. <br> `);
+document.writeln(`Функция №7 ${convertCurrency('3600uah')}. <br> `);
 document.writeln(`Функция №8 ${getRandomPwd(9)} <br> `);
 document.writeln(`Функция №9 ${deleteLetters('a', 'abbababgalamaga')} <br> `);
 document.writeln(`Функция №10 ${isPalyndrom('tenet')}<br> `);
