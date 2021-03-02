@@ -19,29 +19,33 @@ console.log(`Пари студентів ${getPairs()}`);
 //Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія автоматів"], [...], [...]]
 
 const getPairsProjects = function () {
+    /*
+        let pairArr =
+            [[students.slice(0, 2).join(" та ")],
+            [students.slice(2, 4).join(" та ")],
+            [students.slice(4, 6).join(" та ")]];
+    
+        let pairProjects =
+            [[pairArr[0].concat(themes[0])],
+            [pairArr[1].concat(themes[1])],
+            [pairArr[2].concat(themes[2])]];
+        return pairProjects = pairProjects.join(" , ");
+        */
 
     let pairArr =
         [[students.slice(0, 2).join(" та ")],
         [students.slice(2, 4).join(" та ")],
         [students.slice(4, 6).join(" та ")]];
 
-    let pairProjects =
-        [[pairArr[0].concat(themes[0])],
-        [pairArr[1].concat(themes[1])],
-        [pairArr[2].concat(themes[2])]];
-    return pairProjects = pairProjects.join(" , ");
-
-    /*
-        let i = 0;
-        for (let i = 0; i < themes.length; i++) {
-            let pairProjects = [getPairs().concat(themes[i])];
-            return pairProjects;
-        }
-    */
+    let i = 0;
+    let pairsProjects = [];
+    for (let i = 0; i < themes.length; i++) {
+        pairsProjects.push(pairArr[i], themes[i]);
+    } return pairsProjects;
 
 }
 
-console.log(`Теми проектів для пар: ${getPairsProjects()}`);
+console.log(`Теми проектів для пар: ${getPairsProjects()}`); //есть проблемы со знаками препинания :(( В закоментеном варианте такого нет...
 
 //3 Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]]
 
