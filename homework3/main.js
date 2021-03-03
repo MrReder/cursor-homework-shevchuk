@@ -114,17 +114,15 @@ console.log(isPalyndrom('tenet'));
 
 //11
 const deleteDuplicateLetter = function (text) {
-    let counter = 0;
-    let arr = text.split('');
-    console.log(arr);
-    for (let i = 0; i < arr.length; i++) {
-        counter++;
-        if (arr[i] === counter && counter > 1) {
-            return arr.splice(i);
+
+    let splittedText = text.split("");
+    let arrWithoutDuplicate = [];
+    for (let i = 0; i < text.length; i++) {
+        if (splittedText.indexOf(splittedText[i]) === splittedText.lastIndexOf(splittedText[i])) {
+            arrWithoutDuplicate.push(splittedText[i]);
         }
-
     }
-
+    return arrWithoutDuplicate.join("");
 
 }
 console.log(deleteDuplicateLetter('barbarian'));
