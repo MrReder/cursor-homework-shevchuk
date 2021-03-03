@@ -1,14 +1,16 @@
 'use strict';
 
 //1
-const getMaxDigit = function (number) {
+const getMaxDigit = (number) => {
     return Math.max(...number.toString().split(''))
 }
 console.log(getMaxDigit(1236345342657));
 
 //2
-const raiseNumberToDegree = function (number, degree) {
+const raiseNumberToDegree = (number, degree) => {
     let result = 1;
+
+
     for (let i = 1; i <= degree; i++) {
         result *= number;
     } return result;
@@ -17,15 +19,17 @@ console.log(raiseNumberToDegree(7, 3));
 
 //3
 
-const formatName = function (text) {
-    return text[0].toUpperCase() + text.slice(1).toLowerCase()
+const formatName = (text) => {
+
+    return text[0].toUpperCase() + text.slice(1).toLowerCase() || text[0].toLowerCase() + text.slice(1).toUpperCase();
 }
 
 console.log(formatName(`kolya`));
 
 //4
 
-const substractTax = function (profit) {
+const substractTax = (profit) => {
+
     const taxOnProfit = 18;
     const militaryTax = 1.5;
     let netProfit = profit - (profit * ((taxOnProfit + militaryTax) / 100));
@@ -36,7 +40,8 @@ console.log(`Net profit of our company last month was ${substractTax(15000)} USD
 
 //5
 
-const getRandomNumber = function (n, m) {
+const getRandomNumber = (n, m) => {
+
     let result = Math.trunc(n + Math.random() * (m + 1 - n));
     return result;
 }
@@ -45,7 +50,7 @@ console.log(getRandomNumber(1, 355));
 
 //6 
 
-const countLetter = function (letter, text) {
+const countLetter = (letter, text) => {
 
     let counter = 0;
 
@@ -63,7 +68,8 @@ console.log(countLetter('s', 'success'));
 
 //7 I don`t know why it`s not work
 
-const convertCurrency = function (money) {
+const convertCurrency = (money) => {
+
     let arr = money.split(' , ').join(' , ');
     const usa = arr.includes('$');
     const ua = arr.includes('uah') || arr.includes('UAH');
@@ -83,7 +89,8 @@ console.log(convertCurrency('547$'));
 
 //8 
 
-const getRandomPwd = function (digitsQuantity = 8) {
+const getRandomPwd = (digitsQuantity = 8) => {
+
     let pwd = ' ';
     const digits = '0123456789';
 
@@ -94,13 +101,14 @@ const getRandomPwd = function (digitsQuantity = 8) {
 console.log(getRandomPwd(9));
 
 //9 
-const deleteLetters = function (letter, text) {
+const deleteLetters = (letter, text) => {
+
     return text.split(letter).join("");
 }
 console.log(deleteLetters('a', 'abbababgalamaga'));
 
 //10 
-const isPalyndrom = function (text) {
+const isPalyndrom = (text) => {
     let reverse = function (textToReverse) {
         return text.split('').reverse().join('')
     }
@@ -113,7 +121,7 @@ const isPalyndrom = function (text) {
 console.log(isPalyndrom('tenet'));
 
 //11
-const deleteDuplicateLetter = function (text) {
+const deleteDuplicateLetter = (text) => {
 
     let splittedText = text.split("");
     let arrWithoutDuplicate = [];
