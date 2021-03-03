@@ -63,7 +63,8 @@ const getRandomMark = function () {
     };
 
     for (let i = 0; i < getPairsProjects().length; i++) {
-        let pairsProjectsMarks = [getPairsProjects(i).map(getPairsProjects(i).concat(getRandomMarks(1, 5)))];
+        getRandomMarks(1, 5);
+        let pairsProjectsMarks = [getPairsProjects(i).concat(getRandomMarks(i))];
         return pairsProjectsMarks;
     }
     return randomMarksArr.push(pairsProjectsMarks);
