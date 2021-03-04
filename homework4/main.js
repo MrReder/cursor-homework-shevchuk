@@ -55,32 +55,26 @@ console.log('Студенти та оцінки', compareStudentsMarks());
 //(тут функція буде нечистою, але не повинна мутувати массив): [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
 
 const getRandomMark = function () {
-    let randomMarksArr = [];
+
+    let pairArr =
+        [[students.slice(0, 2).join(" та ")],
+        [students.slice(2, 4).join(" та ")],
+        [students.slice(4, 6).join(" та ")]];
 
     let getRandomMarks = (min, max) => {
-        let randomMark = Math.ceil(min + Math.random() * (max + 1 - min));
+        let randomMark = Math.ceil(Math.random() * (max + 1 - min));
         return randomMark;
     };
-    console.log(getRandomMarks(1, 5));
 
-    let randomMark = [];
+    let i = 0;
+    let randomPairsMarksArr = [];
+    for (let i = 0; i < themes.length; i++) {
+        getRandomMarks(1, 5);
+        randomPairsMarksArr.push(pairArr[i].concat(themes[i]).concat(getRandomMarks(1, 5)));
+    } return randomPairsMarksArr;
 
-    let randomMarks = () => {
-        do {
-            randomMark.push(getRandomMarks(1, 5));
-        } while (randomMarks().length === 3);
-        return randomMark;
-    }
-    console.log(randomMark);
-
-
-
-    for (let i = 0; i < getPairsProjects().length; i++) {
-        randomMarksArr.push(getPairsProjects(i).concat(randomMark[i]));
-        return randomMarksArr;
-    }
-    return randomMarksArr;
 }
 
-console.log(getRandomMark());
+console.log(`Випадкова оцінка кожній парі за виконану тему`,
+    getRandomMark());
 
