@@ -18,4 +18,29 @@ const getRandomArray = (length, min, max) => {
     } return randomArr;
 }
 
-console.log(getRandomArray(22, 5, 97));
+console.log(`Функция №1`, getRandomArray(22, 5, 97));
+
+//2
+
+const getModa = (...numbers) => {
+    let modaArr = [];
+
+    if (parseInt(...numbers)) {
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
+                modaArr.push();
+            }
+        }
+        return modaArr;
+
+
+    } else {
+        console.log(`Input valid numbers!`);
+    }
+
+}
+
+console.log(`Функция №2`, getModa(2, 5, 7, 8, 5, 9, 12, 13, 5, 0, 23, 5, 69, 33, 5));
+
+
