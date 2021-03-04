@@ -74,7 +74,7 @@ const getMedian = (...numbers) => {
         return median;
     } else if ((parseInt(...numbers) && numbers % 2 === 0)) {
 
-        let midIndex = numbers.length / 2;
+        let midIndex = (numbers.length) / 2;
         let midIndexMinus = (numbers.length / 2) - 1;
         let medianVar = (midIndex + midIndexMinus) / 2;
         median = numbers[medianVar];
@@ -85,7 +85,7 @@ const getMedian = (...numbers) => {
 }
 
 
-console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
+console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34));
 
 //5
 
