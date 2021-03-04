@@ -20,7 +20,7 @@ const getRandomArray = (length, min, max) => {
 
 console.log(`Функция №1`, getRandomArray(22, 5, 97));
 
-//2
+//2 instead of delete reapiting numbers we used if els estatement and displayed moda!)
 
 const getModa = (...numbers) => {
     let modaArr = [];
@@ -29,7 +29,9 @@ const getModa = (...numbers) => {
 
         for (let i = 0; i < numbers.length; i++) {
             if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
-                modaArr.push();
+
+            } else {
+                modaArr.push(numbers[i]);
             }
         }
         return modaArr;
