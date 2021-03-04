@@ -61,12 +61,25 @@ const getRandomMark = function () {
         let randomMark = Math.ceil(min + Math.random() * (max + 1 - min));
         return randomMark;
     };
+    console.log(getRandomMarks(1, 5));
+
+    let randomMark = [];
+
+    let randomMarks = () => {
+        do {
+            randomMark.push(getRandomMarks(1, 5));
+        } while (randomMarks().length === 3);
+        return randomMark;
+    }
+    console.log(randomMark);
+
+
 
     for (let i = 0; i < getPairsProjects().length; i++) {
-        let pairsProjectsMarks = [getPairsProjects(i).concat(getRandomMarks(1, 5))];
-        return pairsProjectsMarks;
+        randomMarksArr.push(getPairsProjects(i).concat(randomMark[i]));
+        return randomMarksArr;
     }
-    return randomMarksArr.push(pairsProjectsMarks);
+    return randomMarksArr;
 }
 
 console.log(getRandomMark());
