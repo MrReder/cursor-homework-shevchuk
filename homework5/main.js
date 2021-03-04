@@ -86,3 +86,6 @@ const getMedian = (...numbers) => {
 
 
 console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
+
+//5
+
