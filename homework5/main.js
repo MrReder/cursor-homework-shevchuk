@@ -62,3 +62,27 @@ const getAverage = (...numbers) => {
 }
 
 console.log(`Функция №3`, getAverage(2, 5, 7, 888, 98, 4, 7, 2, 1, 453));
+
+//4 else if doesn`t work. I don`t know why :(((((
+
+const getMedian = (...numbers) => {
+    let median;
+
+    if ((parseInt(...numbers) && numbers % 2 !== 0)) {
+        let midIndex = ((numbers.length - 1) / 2);
+        median = numbers[midIndex];
+        return median;
+    } else if ((parseInt(...numbers) && numbers % 2 === 0)) {
+
+        let midIndex = numbers.length / 2;
+        let midIndexMinus = (numbers.length / 2) - 1;
+        let medianVar = (midIndex + midIndexMinus) / 2;
+        median = numbers[medianVar];
+        return median;
+    } else {
+        console.log(`Input valid numbers!`);
+    }
+}
+
+
+console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
