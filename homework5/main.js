@@ -73,11 +73,7 @@ const getMedian = (...numbers) => {
         median = numbers[midIndex];
         return median;
     } else if ((parseInt(...numbers) && numbers % 2 === 0)) {
-
-        let midIndex = (numbers.length) / 2;
-        let midIndexMinus = (numbers.length / 2) - 1;
-        let medianVar = (midIndex + midIndexMinus) / 2;
-        median = numbers[medianVar];
+        median = numbers[((numbers.length / 2) + (numbers.length / 2) - 1) / 2];
         return median;
     } else {
         console.log(`Input valid numbers!`);
@@ -85,7 +81,9 @@ const getMedian = (...numbers) => {
 }
 
 
-console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34));
+console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
 
 //5
+const filterEvenNumbers = (...numbers) => {
 
+}
