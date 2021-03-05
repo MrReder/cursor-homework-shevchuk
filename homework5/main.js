@@ -16,8 +16,7 @@ console.log(`Функция №1`, getRandomArray(22, 5, 97));
 
 //2 instead of delete reapiting numbers we used if els estatement and displayed moda!)
 
-const getModa = (...numbers) => {
-    /*
+/*
     let modaArr = [];
     if (numbers.every(item => Number.isInteger(item))) {
         for (let i = 0; i < numbers.length; i++) {
@@ -33,6 +32,7 @@ const getModa = (...numbers) => {
     }
     */
 
+const getModa = (...numbers) => {
     let currentDigitCount = 0;
     let moda = 0;
     let digit = null;
@@ -53,8 +53,6 @@ const getModa = (...numbers) => {
     } else {
         console.log(`Input valid numbers!`);
     }
-
-
 }
 
 console.log(`Функция №2`, getModa(2, 5, 7, 8, 5, 9, 12, 13, 5, 0, 23, 5, 69, 33, 5));
@@ -81,13 +79,12 @@ console.log(`Функция №3`, getAverage(2, 5, 7, 888, 98, 4, 7, 2, 1, 453)
 
 const getMedian = (...numbers) => {
     let median;
-
-    if ((parseInt(...numbers) && numbers % 2 !== 0)) {
+    if ((parseInt(numbers.length) && numbers.length % 2 !== 0)) {
         let midIndex = ((numbers.length - 1) / 2);
         median = numbers[midIndex];
         return median;
-    } else if ((parseInt(...numbers) && numbers % 2 === 0)) {
-        median = numbers[((numbers.length / 2) + (numbers.length / 2) - 1) / 2];
+    } else if ((parseInt(numbers.length) && numbers.length % 2 === 0)) {
+        median = (+numbers[(numbers.length / 2)] + +numbers[((numbers.length / 2) - 1)]) / 2;
         return median;
     } else {
         console.log(`Input valid numbers!`);
