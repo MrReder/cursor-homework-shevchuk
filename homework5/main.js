@@ -119,6 +119,8 @@ console.log(`Функция №6`, countPositiveNumbers(1, -23, 54, -66, 79, 23,
 //7
 const getDividedByFive = (...numbers) => {
     let dividedByFiveArr = [];
-    dividedByFiveArr = numbers.filter((number) => (number % 2 !== 0));
+    dividedByFiveArr = numbers.filter((number) => (number % 5 === 0));
     return dividedByFiveArr;
 }
+
+console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235));
