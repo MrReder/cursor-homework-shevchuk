@@ -128,7 +128,8 @@ console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235
 //8
 const replaceBadWords = (string) => {
     let stringArr = [];
-    stringArr.push(string.slice(string));
+    stringArr.push(string);
+    stringArr.map('fuck' || 'shit');
     console.log(stringArr);
     for (let i = 0; stringArr.length; i++) {
         if (stringArr[i] === 'fuck'.toUpperCase && 'fuck'.toLowerCase
