@@ -124,3 +124,19 @@ const getDividedByFive = (...numbers) => {
 }
 
 console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235));
+
+//8
+const replaceBadWords = (string) => {
+    let stringArr = [];
+    stringArr.push(string.slice(string));
+    console.log(stringArr);
+    for (let i = 0; stringArr.length; i++) {
+        if (stringArr[i] === 'fuck'.toUpperCase && 'fuck'.toLowerCase
+            || 'shit'.toUpperCase && 'shit'.toLowerCase) {
+
+        }
+    }
+
+}
+
+console.log(`Функция №8`, replaceBadWords(`Go fuck yourself!`));
