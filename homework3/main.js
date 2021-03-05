@@ -20,7 +20,6 @@ console.log(raiseNumberToDegree(7, 3));
 //3
 
 const formatName = (text) => {
-
     return text[0].toUpperCase() + text.slice(1).toLowerCase() || text[0].toLowerCase() + text.slice(1).toUpperCase();
 }
 
@@ -29,11 +28,9 @@ console.log(formatName(`kolya`));
 //4
 
 const substractTax = (profit) => {
-
     const taxOnProfit = 18;
     const militaryTax = 1.5;
-    let netProfit = profit - (profit * ((taxOnProfit + militaryTax) / 100));
-    return netProfit;
+    return profit - (profit * ((taxOnProfit + militaryTax) / 100));
 }
 
 console.log(`Net profit of our company last month was ${substractTax(15000)} USD`);
@@ -41,9 +38,7 @@ console.log(`Net profit of our company last month was ${substractTax(15000)} USD
 //5
 
 const getRandomNumber = (n, m) => {
-
-    let result = Math.trunc(n + Math.random() * (m + 1 - n));
-    return result;
+    return Math.trunc(n + Math.random() * (m + 1 - n));
 }
 
 console.log(getRandomNumber(1, 355));
@@ -51,11 +46,8 @@ console.log(getRandomNumber(1, 355));
 //6 
 
 const countLetter = (letter, text) => {
-
     let counter = 0;
-
     for (let i = 0; i < text.length; i++) {
-
         if (text[i] === letter) {
             counter++;
         }
@@ -66,21 +58,17 @@ console.log(countLetter('s', 'success'));
 
 
 
-//7 I don`t know why it`s not work
+//7 
 
 const convertCurrency = (money) => {
-
-    let arr = money.split(' , ').join(' , ');
+    const arr = money.split(' , ').join(' , ');
     const usa = arr.includes('$');
     const ua = arr.includes('uah') || arr.includes('UAH');
     const for1buck = 28;
-    let converted = 0;
     if (usa) {
-        converted = (parseInt(arr) * for1buck).toFixed(2);
-        return converted;
+        return (parseInt(arr) * for1buck).toFixed(2);
     } else if (ua) {
-        converted = (parseInt(arr) / for1buck).toFixed(2);
-        return converted;
+        return (parseInt(arr) / for1buck).toFixed(2);
     } else {
         console.log(`Input correct currency!`);
     }
@@ -90,10 +78,8 @@ console.log(convertCurrency('547$'));
 //8 
 
 const getRandomPwd = (digitsQuantity = 8) => {
-
     let pwd = ' ';
     const digits = '0123456789';
-
     for (let i = 0; i < digitsQuantity; i++) {
         pwd += digits.charAt(Math.floor(Math.random() * digits.length));
     } return pwd;
@@ -101,28 +87,21 @@ const getRandomPwd = (digitsQuantity = 8) => {
 console.log(getRandomPwd(9));
 
 //9 
-const deleteLetters = (letter, text) => {
-
-    return text.split(letter).join("");
-}
+const deleteLetters = (letter, text) => text.split(letter).join("");
 console.log(deleteLetters('a', 'abbababgalamaga'));
 
 //10 
-const isPalyndrom = (text) => {
+
+const checkIfWordIsPalindrom = (text) => {
     let reverse = function (textToReverse) {
         return text.split('').reverse().join('')
     }
-    if (text === reverse(text)) {
-        return true;
-    } else {
-        return false;
-    }
+    return text === reverse(text)
 }
-console.log(isPalyndrom('tenet'));
+console.log(checkIfWordIsPalindrom('tenet'));
 
 //11
 const deleteDuplicateLetter = (text) => {
-
     let splittedText = text.split("");
     let arrWithoutDuplicate = [];
     for (let i = 0; i < text.length; i++) {
@@ -131,7 +110,6 @@ const deleteDuplicateLetter = (text) => {
         }
     }
     return arrWithoutDuplicate.join("");
-
 }
 console.log(deleteDuplicateLetter('barbarian'));
 
@@ -144,5 +122,5 @@ document.writeln(`Функция №6 ${countLetter('s', 'success')}<br> `);
 document.writeln(`Функция №7 ${convertCurrency('3600uah')}. <br> `);
 document.writeln(`Функция №8 ${getRandomPwd(9)} <br> `);
 document.writeln(`Функция №9 ${deleteLetters('a', 'abbababgalamaga')} <br> `);
-document.writeln(`Функция №10 ${isPalyndrom('tenet')}<br> `);
+document.writeln(`Функция №10 ${checkIfWordIsPalindrom('tenet')}<br> `);
 document.writeln(`Функция №11 ${deleteDuplicateLetter('barbarian')}<br> `);
