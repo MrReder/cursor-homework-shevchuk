@@ -98,3 +98,5 @@ console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
 const filterEvenNumbers = (...numbers) => {
 
 }
+
+console.log(`Функция №5`, filterEvenNumbers(1, 23, 54, 66, 79, 23, 5, 9, 1, 23321, 2336));
