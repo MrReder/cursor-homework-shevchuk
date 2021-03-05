@@ -3,18 +3,12 @@
 //1
 
 const getRandomArray = (length, min, max) => {
-
     let randomArr = [];
-
     for (let i = 0; i < length; i++) {
-
         let getRandomNumber = (minNum, maxNum) => {
-            let randomNum = Math.ceil(Math.random() * (maxNum + 1 - minNum));
-            return randomNum;
+            return Math.ceil(Math.random() * (maxNum + 1 - minNum));
         };
-
         randomArr.push(getRandomNumber(min, max));
-
     } return randomArr;
 }
 
@@ -23,10 +17,9 @@ console.log(`Функция №1`, getRandomArray(22, 5, 97));
 //2 instead of delete reapiting numbers we used if els estatement and displayed moda!)
 
 const getModa = (...numbers) => {
+    /*
     let modaArr = [];
-
-    if (parseInt(...numbers)) {
-
+    if (numbers.every(item => Number.isInteger(item))) {
         for (let i = 0; i < numbers.length; i++) {
             if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
 
@@ -35,11 +28,32 @@ const getModa = (...numbers) => {
             }
         }
         return modaArr;
-
-
     } else {
         console.log(`Input valid numbers!`);
     }
+    */
+
+    let currentDigitCount = 0;
+    let moda = 0;
+    let digit = null;
+    if (numbers.every(item => Number.isInteger(item))) {
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = 0; j < numbers.length; j++) {
+                if (numbers[i] === numbers[j]) {
+                    currentDigitCount++;
+                }
+            }
+            if (currentDigitCount > moda) {
+                digit = numbers[i];
+                moda = currentDigitCount;
+                currentDigitCount = 0;
+            }
+        }
+        return digit;
+    } else {
+        console.log(`Input valid numbers!`);
+    }
+
 
 }
 
