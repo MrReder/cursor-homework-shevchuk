@@ -96,13 +96,29 @@ console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
 
 //5
 const filterEvenNumbers = (...numbers) => {
-    const evenNumbersArr = [];
-    if (numbers % 2 === 0) {
-        evenNumbersArr.push(number);
-        return evenNumbersArr;
-    } else {
-
-    }
+    let evenNumbersArr = [];
+    evenNumbersArr = numbers.filter((number) => (number % 2 !== 0));
+    return evenNumbersArr;
 }
 
 console.log(`Функция №5`, filterEvenNumbers(1, 23, 54, 66, 79, 23, 5, 9, 1, 23321, 2336));
+
+//6
+const countPositiveNumbers = (...numbers) => {
+    let positiveQuantity = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 0) {
+            positiveQuantity++;
+        }
+    } return positiveQuantity;
+
+}
+
+console.log(`Функция №6`, countPositiveNumbers(1, -23, 54, -66, 79, 23, 5, -9, 1, -23321, 2336));
+
+//7
+const getDividedByFive = (...numbers) => {
+    let dividedByFiveArr = [];
+    dividedByFiveArr = numbers.filter((number) => (number % 2 !== 0));
+    return dividedByFiveArr;
+}
