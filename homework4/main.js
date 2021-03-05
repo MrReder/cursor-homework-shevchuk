@@ -20,13 +20,10 @@ console.log(`Пари студентів`, getPairs());
 //Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія автоматів"], [...], [...]]
 
 const getPairsProjects = () => {
-
-
     let pairArr =
         [[students.slice(0, 2).join(" та ")],
         [students.slice(2, 4).join(" та ")],
         [students.slice(4, 6).join(" та ")]];
-
     let i = 0;
     let pairsProjects = [];
     for (let i = 0; i < themes.length; i++) {
@@ -40,11 +37,8 @@ console.log(`Теми проектів для пар`, getPairsProjects());
 //3 Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]]
 
 const compareStudentsMarks = () => {
-
     const studentsMarks = [];
-
     let i = 0;
-
     for (let i = 0; i < students.length; i++) {
         studentsMarks.push([students[i], marks[i]]);
     } return studentsMarks;
