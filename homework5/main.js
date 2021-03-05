@@ -133,9 +133,9 @@ const replaceBadWords = (string) => {
     for (let i = 0; stringArr.length; i++) {
         if (stringArr[i] === 'fuck'.toUpperCase && 'fuck'.toLowerCase
             || 'shit'.toUpperCase && 'shit'.toLowerCase) {
-
+            stringArr.splice(i, '****');
         }
-    }
+    } return stringArr;
 
 }
 
