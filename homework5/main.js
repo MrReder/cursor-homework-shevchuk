@@ -136,20 +136,6 @@ const replaceBadWords = (string) => {
     return stringArr;
 }
 
-
-/*
-    function replaceBadWords(string) {
-let newArr = string.split(' ');
-newArr =  newArr.map((word) => {
-    const badWords = ['shit', 'fuck'];
-    return word.toLowerCase().split(badWords[0]).join('****').split(badWords[1]).join('****');
-}).join(' ');
-return newArr[0].toUpperCase() + newArr.slice(1);
-}
-*/
-
-
-
 console.log(`Функция №8`, replaceBadWords(`It's a bullshit! Go fuck yourself!`));
 
 //9 coming soon
