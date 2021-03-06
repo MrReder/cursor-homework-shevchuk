@@ -129,15 +129,25 @@ console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235
 const replaceBadWords = (string) => {
     let stringArr = [];
     stringArr = string.split(' ');
-    const strongLanguage = ['fuck', 'shit'];
-    let replacedWord = '****';
-    for (let i = 0; i < stringArr.length; i++) {
-        if (stringArr[i] === strongLanguage[0] || strongLanguage[1]) {
-            stringArr[i].slice(replacedWord);
-            return stringArr;
-        }
-    }
+    stringArr = stringArr.map((wordOfString) => {
+        const strongLanguage = ['fuck', 'shit'];
+        return wordOfString.split(strongLanguage[0]).join('****').split(strongLanguage[1]).join('****')
+    }).join(' ');
+    return stringArr;
 }
 
 
-console.log(`Функция №8`, replaceBadWords(`Go fuck yourself!`));
+/*
+    function replaceBadWords(string) {
+let newArr = string.split(' ');
+newArr =  newArr.map((word) => {
+    const badWords = ['shit', 'fuck'];
+    return word.toLowerCase().split(badWords[0]).join('****').split(badWords[1]).join('****');
+}).join(' ');
+return newArr[0].toUpperCase() + newArr.slice(1);
+}
+*/
+
+
+
+console.log(`Функция №8`, replaceBadWords(`It's a bullshit! Go fuck yourself!`));
