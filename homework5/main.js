@@ -151,3 +151,7 @@ return newArr[0].toUpperCase() + newArr.slice(1);
 
 
 console.log(`Функция №8`, replaceBadWords(`It's a bullshit! Go fuck yourself!`));
+
+//9 coming soon
+
+//10 coming soon
