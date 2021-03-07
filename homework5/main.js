@@ -160,7 +160,7 @@ const divideByThree = (word) => {
 
 console.log(`Функция №9`, divideByThree(`Shepard`));
 
-//10 
+//10 in progress
 
 const generateCombinations = (word) => {
     word = word.split(' ').join(' ');
@@ -169,7 +169,9 @@ const generateCombinations = (word) => {
     let uniqueCombinationsArr = [];
     for (let i = 0; i < word.length; i += word.length) {
         uniqueCombinationsArr.push(wordArr.toLowerCase().substring(i, i + wordArr.length));
-        uniqueCombinationsArr.slice(0, uniqueCombinationsArr.length - 1).Math.random() * uniqueCombinationsArr.length;
+        uniqueCombinationsArr.forEach((element) => {
+            return Math.random(element);
+        })
     };
     return uniqueCombinationsArr;
 }
