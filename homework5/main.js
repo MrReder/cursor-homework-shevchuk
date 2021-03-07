@@ -153,11 +153,11 @@ const divideByThree = (word) => {
     wordArr = word;
     wordArr.split(' ');
     let dividedWordArr = [];
-    for (let i = 0; i < word.length; i++) {
-        if (wordArr[i] % 3 === 0) {
-            dividedWordArr = wordArr.substr(i + 3);
-        } return dividedWordArr;
-    }
+
+    dividedWordArr = wordArr.map((syllable) => {
+        syllable = word.slice(0, 2);
+    })
+
 }
 
 console.log(`Функция №9`, divideByThree(`Shepard`));
