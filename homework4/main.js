@@ -24,7 +24,6 @@ const getPairsProjects = () => {
         [[students.slice(0, 2).join(" та ")],
         [students.slice(2, 4).join(" та ")],
         [students.slice(4, 6).join(" та ")]];
-    let i = 0;
     let pairsProjects = [];
     for (let i = 0; i < themes.length; i++) {
         pairsProjects.push(pairArr[i].concat(themes[i]));
@@ -38,7 +37,6 @@ console.log(`Теми проектів для пар`, getPairsProjects());
 
 const compareStudentsMarks = () => {
     const studentsMarks = [];
-    let i = 0;
     for (let i = 0; i < students.length; i++) {
         studentsMarks.push([students[i], marks[i]]);
     } return studentsMarks;
@@ -54,13 +52,10 @@ const getRandomMark = function () {
         [[students.slice(0, 2).join(" та ")],
         [students.slice(2, 4).join(" та ")],
         [students.slice(4, 6).join(" та ")]];
-
     let getRandomMarks = (min, max) => {
         let randomMark = Math.ceil(Math.random() * (max + 1 - min));
         return randomMark;
     };
-
-    let i = 0;
     let randomPairsMarksArr = [];
     for (let i = 0; i < themes.length; i++) {
         getRandomMarks(1, 5);
