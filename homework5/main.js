@@ -160,4 +160,18 @@ const divideByThree = (word) => {
 
 console.log(`Функция №9`, divideByThree(`Shepard`));
 
-//10 coming soon
+//10 
+
+const generateCombinations = (word) => {
+    word = word.split(' ').join(' ');
+    let wordArr = [];
+    wordArr = word;
+    let uniqueCombinationsArr = [];
+    for (let i = 0; i < word.length; i += word.length) {
+        uniqueCombinationsArr.push(wordArr.toLowerCase().substring(i, i + wordArr.length));
+        uniqueCombinationsArr.slice(0, uniqueCombinationsArr.length - 1).Math.random() * uniqueCombinationsArr.length;
+    };
+    return uniqueCombinationsArr;
+}
+
+console.log(`Функция №10`, generateCombinations(`MassEffect`));
