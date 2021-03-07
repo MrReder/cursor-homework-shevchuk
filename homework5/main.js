@@ -150,13 +150,9 @@ console.log(`Функция №8`, replaceBadWords(`It's a bullshit! Go fuck you
 //9
 const divideByThree = (word) => {
     let wordArr = [];
-    wordArr = word;
-    wordArr.split(' ');
-    let dividedWordArr = [];
-
-    dividedWordArr = wordArr.map((syllable) => {
-        syllable = word.slice(0, 2);
-    })
+    wordArr.push(word);
+    wordArr.join(", ");
+    console.log(wordArr);
 
 }
 
