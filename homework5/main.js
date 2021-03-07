@@ -33,27 +33,24 @@ console.log(`Функция №1`, getRandomArray(22, 5, 97));
     */
 
 const getModa = (...numbers) => {
+    let numbersArray = [...numbers];
+    let moda = 1;
     let currentDigitCount = 0;
-    let moda = 0;
-    let digit = null;
-    if (numbers.every(item => Number.isInteger(item))) {
-        for (let i = 0; i < numbers.length; i++) {
-            for (let j = 0; j < numbers.length; j++) {
-                if (numbers[i] === numbers[j]) {
-                    currentDigitCount++;
-                }
-            }
+    let digit;
+    for (let i = 0; i < numbersArray.length; i++) {
+        for (let j = i; j < numbersArray.length; j++) {
+            if (numbersArray[i] == numbersArray[j]) currentDigitCount++;
             if (currentDigitCount > moda) {
-                digit = numbers[i];
                 moda = currentDigitCount;
-                currentDigitCount = 0;
+                digit = numbersArray[i];
             }
         }
-        return digit;
-    } else {
-        console.log(`Input valid numbers!`);
+        currentDigitCount = 0;
     }
+    return digit;
+
 }
+
 
 console.log(`Функция №2`, getModa(2, 5, 7, 8, 5, 9, 12, 13, 5, 0, 23, 5, 69, 33, 5));
 
@@ -127,6 +124,7 @@ console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235
 
 //8
 const replaceBadWords = (string) => {
+    /*
     let stringArr = [];
     stringArr = string.split(' ');
     stringArr = stringArr.map((wordOfString) => {
@@ -134,10 +132,34 @@ const replaceBadWords = (string) => {
         return wordOfString.split(strongLanguage[0]).join('****').split(strongLanguage[1]).join('****')
     }).join(' ');
     return stringArr;
+    */
+    let stringArr = [];
+    stringArr = string.split(' ');
+    let newArr = []
+    const strongLanguage = ['fuck', 'shit'];
+    for (let i = 0; i < stringArr.length; i++) {
+        newArr.push(
+            stringArr[i].split(strongLanguage[0]).join('****').split(strongLanguage[1]).join('****')
+        )
+    }
+    return newArr.join(' ')
 }
 
 console.log(`Функция №8`, replaceBadWords(`It's a bullshit! Go fuck yourself!`));
 
-//9 coming soon
+//9
+const divideByThree = (word) => {
+    let wordArr = [];
+    wordArr = word;
+    wordArr.split(' ');
+    let dividedWordArr = [];
+    for (let i = 0; i < word.length; i++) {
+        if (wordArr[i] % 3 === 0) {
+            dividedWordArr = wordArr.substr(i + 3);
+        } return dividedWordArr;
+    }
+}
+
+console.log(`Функция №9`, divideByThree(`Shepard`));
 
 //10 coming soon
