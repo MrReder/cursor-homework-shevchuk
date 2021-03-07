@@ -150,10 +150,12 @@ console.log(`Функция №8`, replaceBadWords(`It's a bullshit! Go fuck you
 //9
 const divideByThree = (word) => {
     let wordArr = [];
-    wordArr.push(word);
-    wordArr.join(", ");
-    console.log(wordArr);
-
+    word = word.split(' ').join(' ');
+    wordArr = word;
+    let dividedWordArr = [];
+    for (let i = 0; i < wordArr.length; i += 3) {
+        dividedWordArr.push(wordArr.toLowerCase().substring(i, i + 3));
+    } return dividedWordArr;
 }
 
 console.log(`Функция №9`, divideByThree(`Shepard`));
