@@ -168,9 +168,9 @@ const generateCombinations = (word) => {
     wordArr = word;
     let uniqueCombinationsArr = [];
     for (let i = 0; i < wordArr.length; i += wordArr.length) {
-        uniqueCombinationsArr.push(wordArr.toLowerCase().substring(i, i + wordArr.length).charAt(Math.floor(Math.random() * wordArr.length)));
+        uniqueCombinationsArr.push(wordArr.toLowerCase().substring(i, i + wordArr.length).charAt(Math.floor(Math.random() * wordArr.length)).concat(0, wordArr.length - 1));
     };
-    return uniqueCombinationsArr
+    return uniqueCombinationsArr;
 }
 
 console.log(`Функция №10`, generateCombinations(`MassEffect`));
