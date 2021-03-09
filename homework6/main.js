@@ -40,3 +40,10 @@ const getSubjects = (name) => {
 }
 
 console.log(getSubjects('Tanya'));
+
+//2
+const getAverageMark = (student) => {
+
+}
+
+console.log(getAverageMark('Victor'));
