@@ -28,22 +28,15 @@ const students = [{
 
 //1
 
-console.log(students.name);
 
-const getSubjects = (student) => {
-    switch (student.toLowerCase().name) {
-        case 'Tanya':
-            console.log(students.this["Tanya"].subjects);
-            break;
-        case 'Victor':
-            console.log(students.this["Victor"].subjects);
-            break;
-        case 'Anton':
-            console.log(students.this["Anton"].subjects);
-            break;
-        default:
-            console.log(`You haven't input any name`);
+
+const getSubjects = (name) => {
+    let subjectsArr = [];
+    for (let i = 0; i < students.length; i++) {
+        if (name === students[i].name) {
+            return Object.keys(students[i].subjects);
+        }
     }
 };
 
-console.log(getSubjects("Victor"));
+console.log(getSubjects('Victor'));
