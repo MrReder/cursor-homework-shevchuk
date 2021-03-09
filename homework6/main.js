@@ -27,14 +27,11 @@ const students = [{
 }];
 
 //1
-
-
-
 const getSubjects = (name) => {
-    let subjectsArr = [];
     for (let i = 0; i < students.length; i++) {
         if (name === students[i].name) {
-            return Object.keys(students[i].subjects);
+            let result = Object.keys(students[i].subjects);
+            return result;
         }
     }
 };
