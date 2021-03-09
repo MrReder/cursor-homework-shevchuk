@@ -57,18 +57,21 @@ const getSubjects = (name) => {
 console.log(getSubjects('Victor'));
 */
 
+console.log(students[0].subjects);
+console.log(students[1].subjects);
+console.log(students[2].subjects);
+
 const getSubjects = (name) => {
     let subjectsArr;
     for (let i = 0; i < students.length; i++) {
         if (name === students[i].name) {
             subjectsArr = Object.keys(students[i].subjects);
-            //return subjectsArr[i][0].toUpperCase() + subjectsArr[i].slice(1).toLowerCase();
-            for (let j = 0; j < subjectsArr.length; j++) {
-                subjectsArr[j].charAt(0).toUpperCase() + subjectsArr[j].slice(1);
-            }
-
-            return subjectsArr;
-        }
+            //for (let j = 0; j < subjectsArr.length; j++) {
+            //  subjectsArr[j].charAt(0).toUpperCase() + subjectsArr[j].slice(1).toLowerCase;
+            //return subjectsArr;
+            //}
+        } subjectsArr = subjectsArr[i].charAt(0).toUpperCase() + subjectsArr[i].slice(1).toLowerCase;
+        return subjectsArr;
     }
 }
 
