@@ -27,50 +27,14 @@ const students = [{
 }];
 
 //1
-/*
-const getSubjects = (name) => {
-    for (let i = 0; i < students.length; i++) {
-        if (name === students[i].name) {
-            return Object.keys(students[i].subjects);
-
-        }
-    }
-}
-
-console.log(getSubjects('Tanya'));
-*/
-/*
-const getSubjects = (name) => {
-    for (let i = 0; i < students.length; i++) {
-        for (let j = 0; j < students[i].subjects.length; j++) {
-            let splittedSubject = students[i].subjects[j].split(" ");
-            console.log(splittedSubject);
-            if (name === students[i].name) {
-                //return Object.keys(students[i].subjects);
-                return students[i].name.subjects;
-            }
-        }
-    }
-
-}
-
-console.log(getSubjects('Victor'));
-*/
-
-console.log(students[0].subjects);
-console.log(students[1].subjects);
-console.log(students[2].subjects);
-
 const getSubjects = (name) => {
     let subjectsArr;
     for (let i = 0; i < students.length; i++) {
         if (name === students[i].name) {
             subjectsArr = Object.keys(students[i].subjects);
-            //for (let j = 0; j < subjectsArr.length; j++) {
-            //  subjectsArr[j].charAt(0).toUpperCase() + subjectsArr[j].slice(1).toLowerCase;
-            //return subjectsArr;
-            //}
-        } subjectsArr = subjectsArr[i].charAt(0).toUpperCase() + subjectsArr[i].slice(1).toLowerCase;
+        } subjectsArr = subjectsArr.map((subject) => {
+            return (subject.charAt(0).toUpperCase() + subject.slice(1)).replace('_', ' ');
+        });
         return subjectsArr;
     }
 }
