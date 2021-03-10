@@ -59,7 +59,6 @@ const getAverageMark = (student) => {
 console.log(`Average mark of choosen student is:`, getAverageMark('Anton'));
 
 //3 
-
 const getStudentInfo = (student) => {
     for (let i = 0; i < students.length; i++) {
         if (student === students[i].name) {
@@ -75,17 +74,21 @@ const getStudentInfo = (student) => {
 
 console.log(`Main information about choosen student:`, getStudentInfo('Victor'));
 
-//4 Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – 
-//яка повертає імена студентів у алфавітному порядку.
+//4 
+const getStudentsNames = () => {
+    let namesArr = [];
+    namesArr = students.map((student) => {
+        return student.name;
+    });
+    return namesArr.sort();
 
-const getStudentsNames = (students) => {
-    for (let i = 0; i < students[i].length; i++) {
-        let namesArr = [];
-        return namesArr.push(students[i].name);
-    }
+}
+console.log(`Students' names by alphabet order:`, getStudentsNames());
+
+//5 Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
+const getBestStudent = (students) => {
 
 }
 
-console.log(getStudentsNames(students));
 
 
