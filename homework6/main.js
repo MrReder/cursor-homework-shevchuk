@@ -86,9 +86,17 @@ const getStudentsNames = () => {
 console.log(`Students' names by alphabet order:`, getStudentsNames());
 
 //5 Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
-const getBestStudent = (students) => {
+const getBestStudent = () => {
+    let bestMark;
+    let avgMark = getAverageMark(student);
+    students.map((student) => {
+        if (bestMark < avgMark) {
+            bestMark = avgMark;
+
+        }
+    })
 
 }
 
-
+console.log(getBestStudent());
 
