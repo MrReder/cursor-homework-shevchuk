@@ -39,11 +39,53 @@ const getSubjects = (name) => {
     }
 }
 
-console.log(getSubjects('Tanya'));
+console.log(`Subjects of choosen student is:`, getSubjects('Tanya'));
 
 //2
 const getAverageMark = (student) => {
+    for (let i = 0; i < students.length; i++) {
+        if (student === students[i].name) {
+            let marksArr = Object.values(students[i].subjects);
+            marksArr = marksArr.flat(2);
+            let totalSum = marksArr.reduce((total, marks) => {
+                return total + marks;
+            }); let result;
+            return result = +(totalSum / marksArr.length).toFixed(2);
+        }
+
+    }
+}
+
+console.log(`Average mark of choosen student is:`, getAverageMark('Anton'));
+
+//3 
+
+const getStudentInfo = (student) => {
+    for (let i = 0; i < students.length; i++) {
+        if (student === students[i].name) {
+            let studentNFO = {
+                course: students[i].course,
+                name: students[i].name,
+                averageMark: getAverageMark(student)
+            };
+            return studentNFO;
+        }
+    }
+}
+
+console.log(`Main information about choosen student:`, getStudentInfo('Victor'));
+
+//4 Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – 
+//яка повертає імена студентів у алфавітному порядку.
+
+const getStudentsNames = (students) => {
+    for (let i = 0; i < students[i].length; i++) {
+        let namesArr = [];
+        return namesArr.push(students[i].name);
+    }
 
 }
 
-console.log(getAverageMark('Victor'));
+console.log(getStudentsNames(students));
+
+
