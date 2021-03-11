@@ -135,17 +135,20 @@ const calculateWordLetters = (word) => {
     wordArr = word.split('');
     let countLetter = function (letter, word) {
         let counter = 0;
-        for (let i = 0; i < word.length; i++) {
+        for (let i = 0; i < word.length; i += wordArr.length) {
             if (word[i] === letter) {
                 counter++;
             }
         } return counter;
     }
-    console.log(countLetter(word.split(''), 'The Subways'));
+    console.log(wordArr);
 
     for (let i = 0; i < wordArr.length; i++) {
-        objectWithKeys[wordArr] = countLetter(wordArr[i], word);
-        return objectWithKeys;
+        wordArr = wordArr.forEach((element) => {
+            countLetter(element, word)
+        });
+        console.log(wordArr);
+        return wordArr;
     }
 }
 console.log(calculateWordLetters('The Subways'));
