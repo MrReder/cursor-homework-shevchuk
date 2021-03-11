@@ -99,7 +99,7 @@ console.log(`#3 Main information about choosen student:`, getStudentInfo(student
 
 
 //4 
-const getStudentsNamesMyDecison = () => {
+const getStudentsNames = () => {
     let namesArr = [];
     namesArr = students.map((student) => {
         return student.name;
@@ -108,23 +108,23 @@ const getStudentsNamesMyDecison = () => {
 
 }
 console.log(`#4 (My variant and which is done by the tasks condition are equal)
-Students' names by alphabet order:`, getStudentsNamesMyDecison());
+Students' names by alphabet order:`, getStudentsNames());
 
 //5 Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
-const getBestStudent = (student) => {
-    let bestMark;
+//let avgMark = getAverageMark(student[0, 1, 2]);
+const getBestStudent = (students) => {
+    let bestMark = 0;
     let bestStudent;
-    //for(let i = 0; i < students.length)
-    let avgMark = getAverageMarkMyDecision(student);
     students.forEach((student) => {
+        let avgMark = getAverageMarkMyDecision(student.name);
         if (bestMark < avgMark) {
             bestMark = avgMark;
             bestStudent = student.name;
-            return bestStudent;
         }
     })
-
+    return bestStudent;
 }
 
-console.log(getBestStudent(students));
+console.log(`#5 And the best student is: ${getBestStudent(students)}! 
+${getBestStudent(students)}, please accept our congratulations!!!`);
 
