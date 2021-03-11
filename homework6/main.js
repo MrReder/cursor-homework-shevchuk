@@ -130,6 +130,9 @@ ${getBestStudent(students)}, please accept our congratulations!!!`);
 
 //6 Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.
 const calculateWordLetters = (word) => {
+    let objectWithKeys = {};
+    let wordArr = [];
+    wordArr = word.split('');
     let countLetter = function (letter, word) {
         let counter = 0;
         for (let i = 0; i < word.length; i++) {
@@ -138,12 +141,10 @@ const calculateWordLetters = (word) => {
             }
         } return counter;
     }
+    console.log(countLetter(word.split(''), 'The Subways'));
 
-    let objectWithKeys = {};
-    let wordArr = [];
-    wordArr = word.split('');
     for (let i = 0; i < wordArr.length; i++) {
-        objectWithKeys = Object.assign(wordArr[i], countLetter(wordArr[i], word));
+        objectWithKeys[wordArr] = countLetter(wordArr[i], word);
         return objectWithKeys;
     }
 }
