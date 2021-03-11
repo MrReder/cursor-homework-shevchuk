@@ -15,23 +15,6 @@ const getRandomArray = (length, min, max) => {
 console.log(`Функция №1`, getRandomArray(22, 5, 97));
 
 //2 instead of delete reapiting numbers we used if els estatement and displayed moda!)
-
-/*
-    let modaArr = [];
-    if (numbers.every(item => Number.isInteger(item))) {
-        for (let i = 0; i < numbers.length; i++) {
-            if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
-
-            } else {
-                modaArr.push(numbers[i]);
-            }
-        }
-        return modaArr;
-    } else {
-        console.log(`Input valid numbers!`);
-    }
-    */
-
 const getModa = (...numbers) => {
     let numbersArray = [...numbers];
     let moda = 1;
@@ -124,15 +107,6 @@ console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235
 
 //8
 const replaceBadWords = (string) => {
-    /*
-    let stringArr = [];
-    stringArr = string.split(' ');
-    stringArr = stringArr.map((wordOfString) => {
-        const strongLanguage = ['fuck', 'shit'];
-        return wordOfString.split(strongLanguage[0]).join('****').split(strongLanguage[1]).join('****')
-    }).join(' ');
-    return stringArr;
-    */
     let stringArr = [];
     stringArr = string.split(' ');
     let newArr = []
@@ -160,17 +134,30 @@ const divideByThree = (word) => {
 
 console.log(`Функция №9`, divideByThree(`Shepard`));
 
-//10 in progress
-
+//10
 const generateCombinations = (word) => {
-    word = word.split(' ').join(' ');
-    let wordArr = [];
-    wordArr = word;
-    let uniqueCombinationsArr = [];
-    for (let i = 0; i < wordArr.length; i += wordArr.length) {
-        uniqueCombinationsArr.push(wordArr.toLowerCase().substring(i, i + wordArr.length).charAt(Math.floor(Math.random() * wordArr.length)).concat((wordArr[i], wordArr.length - 1)));
-    };
-    return uniqueCombinationsArr;
+    const replaceChars = (chars, i, j) => {
+        let tmp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = tmp;
+    }
+    let counter = Array(word.length).fill(0);
+    let anagrams = [],
+        chars = word.split('');
+    anagrams.push(word);
+    let i = 0;
+    while (i < chars.length) {
+        if (counter[i] < i) {
+            replaceChars(chars, i % 2 === 1 ? counter[i] : 0, i);
+            counter[i]++;
+            i = 0;
+            anagrams.push(chars.join(''));
+        } else {
+            counter[i] = 0;
+            i++;
+        }
+    }
+    return anagrams;
 }
 
-console.log(`Функция №10`, generateCombinations(`MassEffect`));
+console.log(`Функция №10`, generateCombinations(`Commander`));
