@@ -27,7 +27,13 @@ const students = [{
 }];
 
 //1
-const getSubjects = (name) => {
+const getSubjects = (student) => {
+    return Object.keys(student.subjects).map(subject => subject.replace('_', ' ')).map(subject => subject[0].toUpperCase() + subject.slice(1, subject.length));
+}
+console.log(`Subjects of choosen student is:`, getSubjects(students[0]));
+
+/*
+const getSubjectsMyDecision = (name) => {
     let subjectsArr;
     for (let i = 0; i < students.length; i++) {
         if (name === students[i].name) {
@@ -38,10 +44,11 @@ const getSubjects = (name) => {
         return subjectsArr;
     }
 }
-
-console.log(`Subjects of choosen student is:`, getSubjects('Tanya'));
+console.log(`Subjects of choosen student is:`, getSubjectsMyDecision('Tanya'));
+*/
 
 //2
+/*
 const getAverageMark = (student) => {
     for (let i = 0; i < students.length; i++) {
         if (student === students[i].name) {
@@ -55,8 +62,18 @@ const getAverageMark = (student) => {
 
     }
 }
-
 console.log(`Average mark of choosen student is:`, getAverageMark('Anton'));
+*/
+
+const getAverageMark = (student) => {
+    let marksArr;
+    marksArr = marksArr.push(Object.values(student.subjects).flat(2));
+    let totalSum = marksArr.reduce((total, marks) => {
+        return total + marks;
+    });
+    return +(totalSum / marksArr.length).toFixed(2);
+}
+console.log(`Average mark of choosen student is:`, getAverageMark(students[1]));
 
 //3 
 const getStudentInfo = (student) => {
