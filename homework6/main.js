@@ -38,12 +38,12 @@ const getSubjectsMyDecision = (name) => {
         return subjectsArr;
     }
 }
-console.log(`(My variant, for more - look at the code)Subjects of choosen student is:`, getSubjectsMyDecision('Tanya'));
+console.log(`#1 (My variant, for more - look at the code)Subjects of choosen student is:`, getSubjectsMyDecision('Tanya'));
 
 const getSubjects = (student) => {
     return Object.keys(student.subjects).map(subject => subject.replace('_', ' ')).map(subject => subject[0].toUpperCase() + subject.slice(1, subject.length));
 }
-console.log(`Subjects of choosen student is:`, getSubjects(students[0]));
+console.log(`#1 Subjects of choosen student is:`, getSubjects(students[0]));
 
 //2
 const getAverageMarkMyDecision = (student) => {
@@ -59,17 +59,17 @@ const getAverageMarkMyDecision = (student) => {
 
     }
 }
-console.log(`(My variant, for more - look at the code)Average mark of choosen student is:`, getAverageMarkMyDecision('Anton'));
+console.log(`#2 (My variant, for more - look at the code)Average mark of choosen student is:`, getAverageMarkMyDecision('Anton'));
 
 const getAverageMark = (student) => {
-    let marksArr;
-    marksArr = marksArr.push(Object.values(student.subjects).flat(2));
-    let totalSum = marksArr.reduce((total, marks) => {
+    Object.values(student.subjects).flat(2);
+    let totalSum = Object.values(student.subjects).flat(2).reduce((total, marks) => {
         return total + marks;
     });
-    return +(totalSum / marksArr.length).toFixed(2);
+    let result = totalSum / (Object.values(student.subjects).flat(2)).length;
+    return +result.toFixed(2);
 }
-console.log(`Average mark of choosen student is:`, getAverageMark(students[1]));
+console.log(`#2 Average mark of choosen student is:`, getAverageMark(students[2]));
 
 //3 
 const getStudentInfoMyDecison = (student) => {
@@ -85,7 +85,18 @@ const getStudentInfoMyDecison = (student) => {
     }
 }
 
-console.log(`(My variant, for more - look at the code)Main information about choosen student:`, getStudentInfoMyDecison('Victor'));
+console.log(`#3 (My variant, for more - look at the code)Main information about choosen student:`, getStudentInfoMyDecison('Victor'));
+
+const getStudentInfo = (student) => {
+    let studentNFO = {};
+    studentNFO = {
+        course: student.course,
+        name: student.name,
+        averageMark: getAverageMark(student)
+    }; return studentNFO;
+}
+console.log(`#3 Main information about choosen student:`, getStudentInfo(students[1]));
+
 
 //4 
 const getStudentsNamesMyDecison = () => {
@@ -96,7 +107,8 @@ const getStudentsNamesMyDecison = () => {
     return namesArr.sort();
 
 }
-console.log(`(My variant, for more - look at the code)Students' names by alphabet order:`, getStudentsNamesMyDecison());
+console.log(`#4 (My variant and which is done by the tasks condition are equal)
+Students' names by alphabet order:`, getStudentsNamesMyDecison());
 
 //5 Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
 const getBestStudent = () => {
