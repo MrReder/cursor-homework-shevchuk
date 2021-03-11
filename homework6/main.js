@@ -136,7 +136,7 @@ const calculateWordLetters = (word) => {
     let wordArr = word;
     let countLetter = function (wordArr, word) {
         let counter = 0;
-        for (let i = 0; i < word.length; i += word.length) {
+        for (let i = 0; i < word.length; i++) {
             if (word[i] === wordArr) {
                 counter++;
             }
@@ -145,7 +145,7 @@ const calculateWordLetters = (word) => {
 
 
     for (let i = 0; i < wordArr.length; i++) {
-        objectWithKeys[wordArr[i]];
+        objectWithKeys = objectWithKeys[wordArr[i]];
         console.log(objectWithKeys[wordArr[i]]);
     }
 }
