@@ -144,8 +144,8 @@ const calculateWordLetters = (word) => {
     console.log(wordArr);
 
     for (let i = 0; i < wordArr.length; i++) {
-        wordArr = wordArr.forEach((element) => {
-            countLetter(element, word)
+        wordArr = wordArr.map((letter) => {
+            countLetter(letter, word)
         });
         console.log(wordArr);
         return wordArr;
