@@ -143,8 +143,8 @@ const calculateWordLetters = (word) => {
     let wordArr = [];
     wordArr = word.split('');
     for (let i = 0; i < wordArr.length; i++) {
-        let obj = {};
-        obj = Object.assign(wordArr[i]);
+        objectWithKeys = Object.assign(wordArr[i], countLetter(wordArr[i], word));
+        return objectWithKeys;
     }
 }
 console.log(calculateWordLetters('The Subways'));
