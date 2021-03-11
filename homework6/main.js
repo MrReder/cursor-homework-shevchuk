@@ -114,15 +114,16 @@ Students' names by alphabet order:`, getStudentsNamesMyDecison());
 const getBestStudent = () => {
     let bestMark;
     let bestStudent;
-    let avgMark = getAverageMark(student);
-    students.map((student) => {
-        if (bestMark < avgMark) {
-            bestMark = avgMark;
-            bestStudent = student.name;
-            return bestStudent;
-        }
-    })
-
+    for (let i = 0; i < students.length; i++) {
+        let avgMark = getAverageMark(student);
+        students.forEach((student) => {
+            if (bestMark < avgMark) {
+                bestMark = avgMark;
+                bestStudent = student.name;
+                return bestStudent;
+            }
+        })
+    }
 }
 
 console.log(getBestStudent());
