@@ -41,11 +41,8 @@ console.log(`Функция №2`, getModa(2, 5, 7, 8, 5, 9, 12, 13, 5, 0, 23, 5
 //3
 const getAverage = (...numbers) => {
     let avg = 0;
-    if (parseInt(numbers)) {
-        let sum = numbers.reduce((firstElement, nextElement) => {
-            return firstElement + nextElement;
-        }, 0);
-
+    if (numbers.filter(numbers => Number.isInteger(numbers))) {
+        let sum = numbers.reduce((firstElement, nextElement) => firstElement + nextElement);
         return avg = sum / numbers.length;
     } else {
         console.log(`Input valid numbers!`)
