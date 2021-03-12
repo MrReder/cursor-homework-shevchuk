@@ -129,25 +129,45 @@ console.log(`#5 And the best student is: ${getBestStudent(students)}!
 ${getBestStudent(students)}, please accept our congratulations!!!`);
 
 //6 Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.
+
 const calculateWordLetters = (word) => {
     let objectWithKeys = {};
-    word = word.toLowerCase();
-    word = word.split('');
+    word = word.toLowerCase().split('');
     let wordArr = word;
-    let countLetter = function (wordArr, word) {
-        let counter = 0;
-        for (let i = 0; i < word.length; i++) {
-            if (word[i] === wordArr) {
-                counter++;
-            }
-        } return counter;
-    }
+    wordArr.reduce((letters, wordArr) => {
+        if (wordArr[letters] === letters) {
+            counter = 1;
+        } else {
+            counter = wordArr[letters] + 1;
+        }
+        wordArr[letters] = counter;
+        return letters;
+    })
+    console.log(wordArr);
 
 
-    for (let i = 0; i < wordArr.length; i++) {
-        objectWithKeys = Object.assign(wordArr[i]);
-        objectWithKeys = Object.defineProperties(countLetter(objectWithKeys, word));
-        return objectWithKeys;
-    }
 }
-console.log(calculateWordLetters('The Subways'));
+
+
+/*
+const calculateWordLetters = (word) => {
+    let wordArr;
+    wordArr = word.toLowerCase().split('');
+
+    return wordArr.reduce((accumulator, wordArr) => {
+        let letterCount;
+
+        if (accumulator[wordArr] === undefined) {
+            letterCount = 1;
+        } else {
+            letterCount = accumulator[wordArr] + 1;
+        }
+
+        accumulator[wordArr] = letterCount;
+
+        return accumulator;
+    }, {})
+
+}
+*/
+console.log(`#6 ${calculateWordLetters('The Subways')}`);
