@@ -186,4 +186,4 @@ const calculateWordLetters = (word) => {
     }, {})
 }
 
-console.log(calculateWordLetters('The Subways'));
+console.log(`#6 ${calculateWordLetters('The Subways')}`);
