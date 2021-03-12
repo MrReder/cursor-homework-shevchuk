@@ -52,15 +52,14 @@ const getAverage = (...numbers) => {
 
 console.log(`Функция №3`, getAverage(2, 5, 7, 888, 98, 4, 7, 2, 1, 453));
 
-//4 else if doesn`t work. I don`t know why :(((((
-
+//4
 const getMedian = (...numbers) => {
     let median;
-    if ((parseInt(numbers.length) && numbers.length % 2 !== 0)) {
+    if (numbers.filter(numbers => Number.isInteger(numbers.length && numbers.length % 2 !== 0))) {
         let midIndex = ((numbers.length - 1) / 2);
         median = numbers[midIndex];
         return median;
-    } else if ((parseInt(numbers.length) && numbers.length % 2 === 0)) {
+    } else if (numbers.filter(numbers => Number.isInteger(numbers.length && numbers.length % 2 === 0))) {
         median = (+numbers[(numbers.length / 2)] + +numbers[((numbers.length / 2) - 1)]) / 2;
         return median;
     } else {
@@ -73,9 +72,7 @@ console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
 
 //5
 const filterEvenNumbers = (...numbers) => {
-    let evenNumbersArr = [];
-    evenNumbersArr = numbers.filter((number) => (number % 2 !== 0));
-    return evenNumbersArr;
+    return numbers.filter((number) => (number % 2 !== 0));
 }
 
 console.log(`Функция №5`, filterEvenNumbers(1, 23, 54, 66, 79, 23, 5, 9, 1, 23321, 2336));
@@ -95,9 +92,7 @@ console.log(`Функция №6`, countPositiveNumbers(1, -23, 54, -66, 79, 23,
 
 //7
 const getDividedByFive = (...numbers) => {
-    let dividedByFiveArr = [];
-    dividedByFiveArr = numbers.filter((number) => (number % 5 === 0));
-    return dividedByFiveArr;
+    return numbers.filter((number) => (number % 5 === 0));
 }
 
 console.log(`Функция №7`, getDividedByFive(100, 32, 48, 79, 85, 21, 235));
