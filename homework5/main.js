@@ -55,6 +55,7 @@ const getAverage = (...numbers) => {
     let avg = 0;
     let filteredNumbers = numbers.filter((number) => {
         Number.isInteger(number);
+        return filteredNumbers;
     })
     if (filteredNumbers) {
         let sum = filteredNumbers.reduce((firstElement, nextElement) => firstElement + nextElement);
