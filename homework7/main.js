@@ -31,10 +31,13 @@ function getMySalary(country) {
     const minSalary = 1500;
     const maxSalary = 2000;
     let salary = Math.ceil(minSalary + Math.random() * (maxSalary + 1 - minSalary));
+    let taxes = this.tax * salary;
     console.log(salary);
-
-
+    console.log(taxes);
+    let profit = salary - taxes;
+    console.log(profit);
+    return Object.assign(salary, taxes, profit);
 }
 
-console.log(`If I would live in choosen country my salary could be:`, getMySalary.call(latvia));
+console.log(`If I would live in choosen country my salary could be:`, setTimeout(getMySalary.call(latvia), 5000));
 
