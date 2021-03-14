@@ -17,12 +17,24 @@ function getMiddleTaxes(country) {
 
 console.log(`Amount of taxes in choosen country is:`, getMiddleTaxes.call(latvia));
 
-//3 Створіть функцію getTotalTaxes.call(country) -> number; 
-//– яка рахує, скільки всього податків платять IT-спеціалісти у кожній країні. 
-//(tax * middleSalary * vacancies). Функція повинна викликатись через call та працювати з даними через this
+//3 
 function getTotalTaxes(country) {
     return +(this.tax * this.middleSalary * this.vacancies).toFixed(2);
 }
 console.log(`Amount of taxes of all specialists in choosen country is:`, getTotalTaxes.call(litva));
 
+//4 Створіть функцію getMySalary(country) – яка буде писати в консоль об'єкт виду: 
+//{ salary: number, taxes: number, profit: number } кожні 10 секунд. Значення salary – 
+//генеруйте випадковим чином у діапазоні 1500-2000. taxes – розраховується в залежності від вибраної країни та значення salary.
+//profit = salary - taxes;
+function getMySalary(country) {
+    const minSalary = 1500;
+    const maxSalary = 2000;
+    let salary = Math.ceil(minSalary + Math.random() * (maxSalary + 1 - minSalary));
+    console.log(salary);
+
+
+}
+
+console.log(`If I would live in choosen country my salary could be:`, getMySalary.call(latvia));
 
