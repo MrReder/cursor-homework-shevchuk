@@ -69,7 +69,7 @@ const getAverage = (...numbers) => {
 console.log(`Функция №3`, getAverage(2, 5, 7, 888, 98, 4, 7, 2, 1, 453));
 
 //4
-
+/*
 const getMedian = (...numbers) => {
     let median;
     if (numbers.filter(numbers => Number.isInteger(numbers.length && numbers.length % 2 !== 0))) {
@@ -83,7 +83,8 @@ const getMedian = (...numbers) => {
         console.log(`Input valid numbers!`);
     }
 }
-/*
+*/
+
 const getMedian = (...numbers) => {
     let median;
     let filteredNumbers = numbers.filter((number) => {
@@ -101,7 +102,6 @@ const getMedian = (...numbers) => {
         console.log(`Input valid numbers!`);
     }
 }
-*/
 
 console.log(`Функция №4`, getMedian(4, 5, 8, 23, 1, 57, 98, 34, 9));
 
