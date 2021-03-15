@@ -14,10 +14,20 @@ class Student {
     get getMarks() {
         return this.marks;
     }
+    //4
+    set setMarks(mark) {
+        return this.marks = marks.push(mark);
+    }
 }
 //2
-const ostap = new Student('Вища школа психотерапіїї м. Одеса', 1, 'Остап Бендер');
+const ostap = new Student('Вища школа психотерапіїї м. Одеса', 1, 'Остап Бендер', [5, 4, 4, 5]);
 console.log(ostap.getInfo());
 
-//3
+//3 
+console.log(ostap.getMarks);
+
+//4 Створіть сеттер оцінок this.marks = 5, який дозволяє поставити оцінку студенту. 
+//Після того, як оцінка поставлена, геттер повинен повернути масив this.marks -> [5, 4, 4, 5, 5]
+ostap.setMarks = 5;
+console.log(ostap.getMarks);
 
