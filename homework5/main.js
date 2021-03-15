@@ -57,7 +57,7 @@ const getAverage = (...numbers) => {
         Number.isInteger(number);
         return numbers;
     })
-    if (filteredNumbers) {
+    if (filteredNumbers.length) {
         let sum = filteredNumbers.reduce((firstElement, nextElement) => firstElement + nextElement);
         return avg = sum / filteredNumbers.length;
     } else {
