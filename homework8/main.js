@@ -9,6 +9,11 @@ class Student {
             return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`;
         };
         this.marks = marks;
+        this.getAverageMark = function () {
+            return (this.marks.reduce((total, marks) => {
+                return total + marks;
+            })) / this.marks.length;
+        }
     }
     //3
     get getMarks() {
@@ -16,8 +21,10 @@ class Student {
     }
     //4
     set setMarks(mark) {
-        return this.marks = marks.push(mark);
+        return this.marks.push(mark);
     }
+
+
 }
 //2
 const ostap = new Student('Вища школа психотерапіїї м. Одеса', 1, 'Остап Бендер', [5, 4, 4, 5]);
@@ -31,3 +38,7 @@ console.log(ostap.getMarks);
 ostap.setMarks = 5;
 console.log(ostap.getMarks);
 
+//5 Створіть метод отримання середнього балу this.getAverageMark() -> 4.6
+console.log(ostap.getAverageMark());
+
+//6
