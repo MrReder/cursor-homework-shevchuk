@@ -32,5 +32,5 @@ function getMySalary(country) {
     let profit = salary - taxes;
     return { salary: salary, taxes: taxes, profit: profit };
 }
-setTimeout("console.log(`If I would live in choosen country my salary, taxes and Net profit could be:`, getMySalary.call(latvia))", 5000);
+setInterval("console.log(`If I would live in choosen country my salary, taxes and Net profit could be:`, getMySalary.call(latvia))", 10000);
 
