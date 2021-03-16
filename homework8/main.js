@@ -63,14 +63,18 @@ class BudgetStudent extends Student {
     constructor(university, course, fullName, marks, scholarship) {
         super(university, course, fullName, marks);
         this.scholarship = scholarship;
-        //2
         this.getScholarship = function () {
-            if (this.getAverageMark() >= 4.0 && this.marks !== null) {
-                setInterval("console.log(`Ви отримали ${this.scholarship} грн. стипендіїї`)", 3000);
+            if (this.getAverageMark() >= 4) {
+                console.log(`Ви отримали ${this.scholarship} грн. стипендії.`);
+            } else if (this.getAverageMark() < 4) {
+                console.log(`Даний студент не має права на стипендію через занадто низький середній балл.`)
+            } else if (this.dismiss) {
+                console.log(`Даний студент не має права на стипендію, оскільки його виключено із ВНЗ.`)
             }
         }
     }
 }
 
-const oleh = new BudgetStudent('КНЕУ м. Київ', 4, 'Олег Винник', [5, 5, 5, 5], 1400);
-oleh.getScholarship();
+const oleh = new BudgetStudent('КНЕУ м. Київ', 4, 'Олег Винник', [5, 4, 5, 5], 1400);
+console.log(oleh);
+setInterval("oleh.getScholarship()", 30000);
