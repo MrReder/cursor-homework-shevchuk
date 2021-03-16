@@ -65,7 +65,12 @@ class BudgetStudent extends Student {
         this.scholarship = scholarship;
         //2
         this.getScholarship = function () {
-
+            if (this.getAverageMark() >= 4.0 && this.marks !== null) {
+                setInterval("console.log(`Ви отримали ${this.scholarship} грн. стипендіїї`)", 3000);
+            }
         }
     }
 }
+
+const oleh = new BudgetStudent('КНЕУ м. Київ', 4, 'Олег Винник', [5, 5, 5, 5], 1400);
+oleh.getScholarship();
