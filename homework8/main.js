@@ -15,7 +15,10 @@ class Student {
             })) / this.marks.length;
         };
         this.dismiss = function () {
-            return this.marks === null;
+            return this.marks = null;
+        };
+        this.recovery = function () {
+            return this.marks = marks;
         }
     }
     //3
@@ -47,5 +50,22 @@ console.log(ostap.getAverageMark());
 //6Створіть метод this.dismiss, який "виключить" студента. 
 //Після виклику цього методу – ставити студенту оцінки та отримувати їх більше не можна. 
 //(Ніяких помилок, просто повертається завжди null замість масиву оцінок)
-ostap.dismiss();
+console.log(ostap.dismiss());
 console.log(ostap);
+console.log(ostap.getMarks);
+
+//7 Створіть метод this.recover, який дозволить поновити студента
+ostap.recovery();
+console.log(ostap.getMarks);
+
+//Advanced
+class BudgetStudent extends Student {
+    constructor(university, course, fullName, marks, scholarship) {
+        super(university, course, fullName, marks);
+        this.scholarship = scholarship;
+        //2
+        this.getScholarship = function () {
+
+        }
+    }
+}
