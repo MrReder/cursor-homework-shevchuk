@@ -13,6 +13,9 @@ class Student {
             return (this.marks.reduce((total, marks) => {
                 return total + marks;
             })) / this.marks.length;
+        };
+        this.dismiss = function () {
+            return this.marks === null;
         }
     }
     //3
@@ -41,4 +44,8 @@ console.log(ostap.getMarks);
 //5 Створіть метод отримання середнього балу this.getAverageMark() -> 4.6
 console.log(ostap.getAverageMark());
 
-//6
+//6Створіть метод this.dismiss, який "виключить" студента. 
+//Після виклику цього методу – ставити студенту оцінки та отримувати їх більше не можна. 
+//(Ніяких помилок, просто повертається завжди null замість масиву оцінок)
+ostap.dismiss();
+console.log(ostap);
