@@ -25,10 +25,12 @@ block.style.backgroundColor = function backgroundColor() {
 
 function generateBlocks(element) {
     for (let i = 0; i < 25; i++) {
-        return blocks.appendChild(element++);
+        element += element++
+        return blocks.appendChild(element);
     }
 }
 
+generateBlocks(block);
 
 
 
