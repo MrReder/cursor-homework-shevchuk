@@ -37,26 +37,26 @@ const ostap = new Student('Вища школа психотерапіїї м. О
 console.log(ostap.getInfo());
 
 //3 
-console.log(ostap.getMarks);
+console.log(`Оцінки студента`, ostap.getMarks);
 
 //4 Створіть сеттер оцінок this.marks = 5, який дозволяє поставити оцінку студенту. 
 //Після того, як оцінка поставлена, геттер повинен повернути масив this.marks -> [5, 4, 4, 5, 5]
 ostap.setMarks = 5;
-console.log(ostap.getMarks);
+console.log(`Оновленний масив оцінок студента`, ostap.getMarks);
 
 //5 Створіть метод отримання середнього балу this.getAverageMark() -> 4.6
-console.log(ostap.getAverageMark());
+console.log(`Середній бал студента`, ostap.getAverageMark());
 
 //6Створіть метод this.dismiss, який "виключить" студента. 
 //Після виклику цього методу – ставити студенту оцінки та отримувати їх більше не можна. 
 //(Ніяких помилок, просто повертається завжди null замість масиву оцінок)
-console.log(ostap.dismiss());
-console.log(ostap);
-console.log(ostap.getMarks);
+console.log(`Студента виключено`, ostap.dismiss());
+console.log(`Загальна інфа про виключеного студента`, ostap);
+console.log(`Масив оцінок не відображається так як студента відрахували`, ostap.getMarks);
 
 //7 Створіть метод this.recover, який дозволить поновити студента
 ostap.recovery();
-console.log(ostap.getMarks);
+console.log(`Остап реабілітувався, його поновлено!`, ostap.getMarks);
 
 //Advanced
 class BudgetStudent extends Student {
@@ -76,5 +76,5 @@ class BudgetStudent extends Student {
 }
 
 const oleh = new BudgetStudent('КНЕУ м. Київ', 4, 'Олег Винник', [5, 4, 5, 5], 1400);
-console.log(oleh);
+console.log(`Наш новий бюджетник`, oleh);
 setInterval("oleh.getScholarship()", 30000);
