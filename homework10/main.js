@@ -65,4 +65,5 @@ function generateBlocksInterval() {
 }
 
 generateBlocksInterval();
+//setInterval("console.log('Mary')", 1000);
 
