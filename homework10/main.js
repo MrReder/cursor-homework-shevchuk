@@ -44,6 +44,7 @@ function generateBlocks() {
 generateBlocks();
 
 //I can`t make it
+/*
 function generateBlocksInterval() {
     for (let i = 0; i < 25; i++) {
         let block = document.createElement('div');
@@ -53,6 +54,30 @@ function generateBlocksInterval() {
         border: solid 2px`;
         block.style.backgroundColor = backgroundColor();
         blocks.appendChild(block);
+    }
+}
+
+generateBlocksInterval();
+*/
+
+let blocksInterval = document.querySelector('.interval-cubics-wrapper');
+
+blocksInterval.style.cssText = `display: grid;
+justify-content: center;
+grid-template-columns: 50px 50px 50px 50px 50px;
+grid-template-rows: 50px 50px 50px 50px;
+margin-top: 50px;
+margin-bottom: 50px}`;
+
+function generateBlocksInterval() {
+    for (let i = 0; i < 25; i++) {
+        let block = document.createElement('div');
+        block.className = 'single-block';
+        block.style.cssText = `height: 50px;
+        width: 50px;
+        border: solid 2px`;
+        block.style.backgroundColor = setInterval(backgroundColor, 1000);
+        blocksInterval.appendChild(block);
     }
 }
 
