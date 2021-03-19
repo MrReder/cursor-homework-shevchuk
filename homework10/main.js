@@ -1,6 +1,6 @@
 "use strict";
 
-let blocks = document.querySelector('.cubics-wrapper');
+const blocks = document.querySelector('.cubics-wrapper');
 
 blocks.style.cssText = `display: grid;
 justify-content: center;
@@ -32,7 +32,7 @@ function backgroundColor() {
 
 function generateBlocks() {
     for (let i = 0; i < 25; i++) {
-        let block = document.createElement('div');
+        const block = document.createElement('div');
         block.className = 'single-block';
         block.style.cssText = `height: 50px;
         width: 50px;
@@ -43,24 +43,7 @@ function generateBlocks() {
 }
 generateBlocks();
 
-//I can`t make it
-/*
-function generateBlocksInterval() {
-    for (let i = 0; i < 25; i++) {
-        let block = document.createElement('div');
-        block.className = 'single-block';
-        block.style.cssText = `height: 50px;
-        width: 50px;
-        border: solid 2px`;
-        block.style.backgroundColor = backgroundColor();
-        blocks.appendChild(block);
-    }
-}
-
-generateBlocksInterval();
-*/
-
-let blocksInterval = document.querySelector('.interval-cubics-wrapper');
+const blocksInterval = document.querySelector('.interval-cubics-wrapper');
 
 blocksInterval.style.cssText = `display: grid;
 justify-content: center;
@@ -71,13 +54,12 @@ margin-bottom: 50px}`;
 
 function generateBlocksInterval() {
     for (let i = 0; i < 25; i++) {
-        let block = document.createElement('div');
-        block.className = 'single-block';
+        const block = document.createElement('div');
+        block.className = 'interval-single-block';
         block.style.cssText = `height: 50px;
         width: 50px;
         border: solid 2px`;
         block.style.backgroundColor = backgroundColor();
-        setInterval("block.style.backgroundColor", 1000);
         blocksInterval.appendChild(block);
     }
 }
