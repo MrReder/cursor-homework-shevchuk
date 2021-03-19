@@ -9,12 +9,13 @@ grid-template-rows: 50px 50px 50px 50px;
 margin-top: 50px;
 margin-bottom: 50px}`;
 
-function backgroundColor() {
+function getBackgroundColor() {
     let red = Math.ceil(0 + Math.random() * (255 + 1 - 0));
     let green = Math.ceil(0 + Math.random() * (255 + 1 - 0));
     let blue = Math.ceil(0 + Math.random() * (255 + 1 - 0));
     return `rgb(${red},${green},${blue})`;
 }
+getBackgroundColor();
 
 function generateBlocks() {
     for (let i = 0; i < 25; i++) {
@@ -23,7 +24,7 @@ function generateBlocks() {
         block.style.cssText = `height: 50px;
         width: 50px;
         border: solid 2px`;
-        block.style.backgroundColor = backgroundColor();
+        block.style.backgroundColor = getBackgroundColor();
         blocks.appendChild(block);
     }
 }
@@ -45,7 +46,7 @@ function generateBlocksInterval() {
         block.style.cssText = `height: 50px;
         width: 50px;
         border: solid 2px`;
-        block.style.backgroundColor = backgroundColor();
+        block.style.backgroundColor = getBackgroundColor();
         blocksInterval.appendChild(block);
     }
 }
