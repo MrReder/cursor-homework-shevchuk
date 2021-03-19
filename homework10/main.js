@@ -76,7 +76,8 @@ function generateBlocksInterval() {
         block.style.cssText = `height: 50px;
         width: 50px;
         border: solid 2px`;
-        block.style.backgroundColor = setInterval(backgroundColor, 1000);
+        block.style.backgroundColor = backgroundColor();
+        setInterval("block.style.backgroundColor", 1000);
         blocksInterval.appendChild(block);
     }
 }
