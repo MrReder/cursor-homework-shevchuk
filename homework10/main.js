@@ -20,7 +20,6 @@ getBackgroundColor();
 function generateBlocks() {
     for (let i = 0; i < 25; i++) {
         const block = document.createElement('div');
-        block.className = 'single-block';
         block.style.cssText = `height: 50px;
         width: 50px;
         border: solid 2px`;
@@ -33,12 +32,7 @@ generateBlocks();
 //Advanced
 const blocksInterval = document.querySelector('.interval-cubics-wrapper');
 
-blocksInterval.style.cssText = `display: grid;
-justify-content: center;
-grid-template-columns: 50px 50px 50px 50px 50px;
-grid-template-rows: 50px 50px 50px 50px;
-margin-top: 50px;
-margin-bottom: 50px}`;
+blocksInterval.style.cssText = blocks.style.cssText;
 
 function generateBlocksInterval() {
     for (let i = 0; i < 25; i++) {
@@ -57,7 +51,6 @@ function generateBlocksInterval() {
             });
         }, 1000);
     }
-
 }
 generateBlocksInterval();
 
