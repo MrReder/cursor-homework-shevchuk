@@ -31,14 +31,12 @@ const getSubjectsMyDecision = (name) => {
     let subjectsArr;
     for (let i = 0; i < students.length; i++) {
         if (name === students[i].name) {
-            subjectsArr = Object.keys(students[i].subjects);
-        } subjectsArr = subjectsArr.map((subject) => {
-            return (subject.charAt(0).toUpperCase() + subject.slice(1)).replace('_', ' ');
-        });
-        return subjectsArr;
+            subjectsArr = Object.keys(students[i].subjects).map(subject => subject.replace('_', ' ')).map(subject => subject[0].toUpperCase() + subject.slice(1, subject.length));
+        }
     }
+    return subjectsArr;
 }
-console.log(`#1 (My variant, for more - look at the code)Subjects of choosen student is:`, getSubjectsMyDecision('Tanya'));
+console.log(`#1 (My variant, for more - look at the code)Subjects of choosen student is:`, getSubjectsMyDecision('Anton'));
 
 const getSubjects = (student) => {
     return Object.keys(student.subjects).map(subject => subject.replace('_', ' ')).map(subject => subject[0].toUpperCase() + subject.slice(1, subject.length));
@@ -51,7 +49,7 @@ const getAverageMarkMyDecision = (student) => {
         if (student === students[i].name) {
             let marksArr = Object.values(students[i].subjects);
             marksArr = marksArr.flat(2);
-            let totalSum = marksArr.reduce((total, marks) => {
+            const totalSum = marksArr.reduce((total, marks) => {
                 return total + marks;
             }); let result;
             return result = +(totalSum / marksArr.length).toFixed(2);
@@ -63,10 +61,10 @@ console.log(`#2 (My variant, for more - look at the code)Average mark of choosen
 
 const getAverageMark = (student) => {
     Object.values(student.subjects).flat(2);
-    let totalSum = Object.values(student.subjects).flat(2).reduce((total, marks) => {
+    const totalSum = Object.values(student.subjects).flat(2).reduce((total, marks) => {
         return total + marks;
     });
-    let result = totalSum / (Object.values(student.subjects).flat(2)).length;
+    const result = totalSum / (Object.values(student.subjects).flat(2)).length;
     return +result.toFixed(2);
 }
 console.log(`#2 Average mark of choosen student is:`, getAverageMark(students[2]));
@@ -88,24 +86,18 @@ const getStudentInfoMyDecison = (student) => {
 console.log(`#3 (My variant, for more - look at the code)Main information about choosen student:`, getStudentInfoMyDecison('Victor'));
 
 const getStudentInfo = (student) => {
-    let studentNFO = {};
-    studentNFO = {
+    return {
         course: student.course,
         name: student.name,
         averageMark: getAverageMark(student)
-    }; return studentNFO;
+    }
 }
 console.log(`#3 Main information about choosen student:`, getStudentInfo(students[1]));
 
 
 //4 
 const getStudentsNames = () => {
-    let namesArr = [];
-    namesArr = students.map((student) => {
-        return student.name;
-    });
-    return namesArr.sort();
-
+    return students.map(student => student.name).sort()
 }
 console.log(`#4 (My variant and which is done by the tasks condition are equal)
 Students' names by alphabet order:`, getStudentsNames());
