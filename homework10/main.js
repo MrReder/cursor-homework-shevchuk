@@ -30,6 +30,7 @@ function generateBlocks() {
 }
 generateBlocks();
 
+//Advanced
 const blocksInterval = document.querySelector('.interval-cubics-wrapper');
 
 blocksInterval.style.cssText = `display: grid;
@@ -46,11 +47,18 @@ function generateBlocksInterval() {
         block.style.cssText = `height: 50px;
         width: 50px;
         border: solid 2px`;
-        block.style.backgroundColor = getBackgroundColor();
+        block.style.backgroundColor = getBackgroundColor()
         blocksInterval.appendChild(block);
+        let blocksArray = [];
+        blocksArray = document.querySelectorAll('.interval-single-block');
+        setInterval(() => {
+            blocksArray.forEach(block => {
+                block.style.backgroundColor = getBackgroundColor();
+            });
+        }, 1000);
     }
-}
 
+}
 generateBlocksInterval();
-//setInterval("console.log('Mary')", 1000);
+
 
