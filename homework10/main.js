@@ -28,7 +28,13 @@ function generateBlocks() {
         blocks.appendChild(block);
     }
 }
-firstBtn.addEventListener('click', generateBlocks);
+firstBtn.addEventListener('click', function () {
+    generateBlocks();
+    const container = document.querySelector('.buttons-container');
+    container.removeChild(firstBtn);
+});
+
+
 
 
 //Advanced
@@ -54,6 +60,8 @@ function generateBlocksInterval() {
         }, 1000);
     }
 }
-
-secondBtn.addEventListener('click', generateBlocksInterval);
-
+secondBtn.addEventListener('click', function () {
+    generateBlocksInterval();
+    const container = document.querySelector('.buttons-container');
+    container.removeChild(secondBtn);
+});
