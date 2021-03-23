@@ -36,3 +36,6 @@ btnQ.addEventListener('click', function () {
     btnQ.style.backgroundColor = 'crimson';
     soundQ.play();
 });
+btnQ.addEventListener('keydown', function () {
+    btnQ.style.backgroundColor = 'transition';
+});
