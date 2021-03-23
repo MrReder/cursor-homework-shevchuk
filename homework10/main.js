@@ -17,7 +17,7 @@ function getBackgroundColor() {
 }
 getBackgroundColor();
 
-const generateBlocks = function () {
+function generateBlocks() {
     for (let i = 0; i < 25; i++) {
         const block = document.createElement('div');
         block.style.cssText = `height: 50px;
@@ -28,7 +28,6 @@ const generateBlocks = function () {
     }
 }
 generateBlocks();
-
 
 
 //Advanced
