@@ -32,10 +32,14 @@ generateBlocksKeys();
 
 const btnQ = document.querySelector('#buttonQ');
 const soundQ = document.querySelector('#soundQ');
-btnQ.addEventListener('click', function () {
+btnQ.addEventListener('mousedown', function () {
     btnQ.style.backgroundColor = 'crimson';
     soundQ.play();
 });
+btnQ.addEventListener('mouseup', setTimeout(function () {
+    btnQ.style.backgroundColor = 'transparent'
+}), 500);
 btnQ.addEventListener('keydown', function () {
-    btnQ.style.backgroundColor = 'transition';
+    btnQ.style.backgroundColor = 'crimson';
+    soundQ.play();
 });
