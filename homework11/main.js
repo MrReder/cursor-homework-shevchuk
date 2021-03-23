@@ -30,4 +30,9 @@ function generateBlocksKeys() {
 generateBlocksKeys();
 */
 
-
+const btnQ = document.querySelector('#buttonQ');
+const soundQ = document.querySelector('#soundQ');
+btnQ.addEventListener('click', function () {
+    btnQ.style.backgroundColor = 'crimson';
+    return soundQ;
+});

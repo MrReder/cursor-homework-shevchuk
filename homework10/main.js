@@ -17,7 +17,7 @@ function getBackgroundColor() {
 }
 getBackgroundColor();
 
-function generateBlocks() {
+const generateBlocks = function () {
     for (let i = 0; i < 25; i++) {
         const block = document.createElement('div');
         block.style.cssText = `height: 50px;
@@ -28,6 +28,8 @@ function generateBlocks() {
     }
 }
 generateBlocks();
+
+
 
 //Advanced
 const blocksInterval = document.querySelector('.interval-cubics-wrapper');
