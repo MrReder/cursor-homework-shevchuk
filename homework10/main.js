@@ -17,6 +17,7 @@ function getBackgroundColor() {
 }
 getBackgroundColor();
 
+const firstBtn = document.querySelector('.firstMagic');
 function generateBlocks() {
     for (let i = 0; i < 25; i++) {
         const block = document.createElement('div');
@@ -27,14 +28,14 @@ function generateBlocks() {
         blocks.appendChild(block);
     }
 }
-generateBlocks();
+firstBtn.addEventListener('click', generateBlocks);
 
 
 //Advanced
 const blocksInterval = document.querySelector('.interval-cubics-wrapper');
 
 blocksInterval.style.cssText = blocks.style.cssText;
-
+const secondBtn = document.querySelector('.secondMagic');
 function generateBlocksInterval() {
     for (let i = 0; i < 25; i++) {
         const block = document.createElement('div');
@@ -53,6 +54,6 @@ function generateBlocksInterval() {
         }, 1000);
     }
 }
-generateBlocksInterval();
 
+secondBtn.addEventListener('click', generateBlocksInterval);
 
