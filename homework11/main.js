@@ -10,13 +10,20 @@
 //     btnQ.style.backgroundColor = 'transparent';
 // });
 
-// document.body.addEventListener('keydown', function () {
-//     btnQ.style.backgroundColor = 'crimson';
-//     soundQ.play();
+// document.body.addEventListener('keydown', function (e) {
+//     if (e.keyCode === 81) {
+//         btnQ.style.backgroundColor = 'crimson';
+//         soundQ.play();
+//     }
 // });
-// document.body.addEventListener('keyup', function () {
-//     btnQ.style.backgroundColor = 'transparent';
+// document.body.addEventListener('keyup', function (e) {
+//     if (e.keyCode === 81) {
+//         btnQ.style.backgroundColor = 'transparent';
+//     }
 // });
+
+
+
 
 //It`s not work
 function getSound() {
@@ -26,19 +33,22 @@ function getSound() {
     const sounds = document.querySelectorAll('audio');
     const soundsArr = [];
     soundsArr.push(sounds);
-    for (let i = 0; i < btnsArr.length; i++) {
-        for (let j = 0; j < soundsArr.length; j++) {
-            document.body.addEventListener('keydown', function () {
-                btnsArr[i].style.backgroundColor = 'crimson';
-                soundsArr[j].play();
-            });
-            document.body.addEventListener('keyup', function () {
-                btnsArr[i].style.backgroundColor = 'transparent';
-            });
-
+    document.body.addEventListener('keydown', function (e) {
+        if (e.keyCode === event.which) {
+            btnsArr.map((element) => {
+                element.style.backgroundColor = 'crimson';
+                soundsArr[element].play();
+            })
         }
+    });
+    document.body.addEventListener('keyup', function (e) {
+        if (e.keyCode === event.which) {
+            btnsArr.map((element) => {
+                element.style.backgroundColor = 'transparent';
+            })
+        }
+    });
 
-    }
 }
 getSound();
 
