@@ -48,13 +48,8 @@ kbd{
     transform: scale(1.3);
     border: solid 3px;
 }
-.btn-up{
-    background-color: transparent;
-}
 .mouse-down{
-    color: crimson;
-    scale: 1.2;
-}
-.mouse-up{
-    color: transparent;
+    background-color: crimson;
+    transform: scale(1.3);
+    border: solid 3px;
 }

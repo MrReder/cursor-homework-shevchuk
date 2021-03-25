@@ -200,16 +200,24 @@ const soundH = document.querySelector('#soundH');
 // getSoundByMouse();
 
 function getSoundShortly() {
-    document.addEventListener('keydown', function (e) {
+    window.addEventListener('keydown', function (e) {
         const btn = document.querySelector(`.single-button[data-key="${e.keyCode}"]`);
         btn.classList.add('btn-down');
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         if (!audio) return;
         audio.play();
     })
-    document.addEventListener('keyup', function (e) {
+    window.addEventListener('keyup', function (e) {
         const btn = document.querySelector(`.single-button[data-key="${e.keyCode}"]`);
         btn.classList.remove('btn-down');
+    })
+    const soundClick = document.querySelector(`div[data-key="${button}"]`);
+    soundClick.addEventListener('mousedown', function (e) {
+        const click = document.querySelector(`.single-button[data-key="${e.keyCode}"]`);
+        click.classList.add('mouse-down');
+        const audio = document.querySelector(`.audio[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+        audio.play();
     })
     // document.addEventListener('mousedown', function (e) {
     //     const click = document.querySelector(`.single-button[data-key="${e.target}"]`);
@@ -220,7 +228,7 @@ function getSoundShortly() {
     // })
     // document.addEventListener('mouseup', function (e) {
     //     const click = document.querySelector(`.single-button[data-key="${e.target}"]`);
-    //     click.classList.add('mouse-up');
+    //     click.classList.remove('mouse-down');
     // })
 }
 getSoundShortly();
