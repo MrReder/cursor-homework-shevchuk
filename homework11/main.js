@@ -26,183 +26,189 @@ const soundF = document.querySelector('#soundF');
 const soundG = document.querySelector('#soundG');
 const soundH = document.querySelector('#soundH');
 
-// btnQ.addEventListener('mousedown', function () {
-//     btnQ.style.backgroundColor = 'crimson';
-//     soundQ.play();
-// });
-// btnQ.addEventListener('mouseup', function () {
-//     btnQ.style.backgroundColor = 'transparent';
-// });
+// function getSound() {
+//     document.body.addEventListener('keydown', function (e) {
+//         const equalty = e.keyCode === e.which;
+//         switch (equalty) {
+//             case e.which === 81: btnQ.style.backgroundColor = 'crimson';
+//                 soundQ.play();
+//                 break;
+//             case e.which === 87: btnW.style.backgroundColor = 'crimson';
+//                 soundW.play();
+//                 break;
+//             case e.which === 69: btnE.style.backgroundColor = 'crimson';
+//                 soundE.play();
+//                 break;
+//             case e.which === 82: btnR.style.backgroundColor = 'crimson';
+//                 soundR.play();
+//                 break;
+//             case e.which === 84: btnT.style.backgroundColor = 'crimson';
+//                 soundT.play();
+//                 break;
+//             case e.which === 89: btnY.style.backgroundColor = 'crimson';
+//                 soundY.play();
+//                 break;
+//             case e.which === 65: btnA.style.backgroundColor = 'crimson';
+//                 soundA.play();
+//                 break;
+//             case e.which === 83: btnS.style.backgroundColor = 'crimson';
+//                 soundS.play();
+//                 break;
+//             case e.which === 68: btnD.style.backgroundColor = 'crimson';
+//                 soundD.play();
+//                 break;
+//             case e.which === 70: btnF.style.backgroundColor = 'crimson';
+//                 soundF.play();
+//                 break;
+//             case e.which === 71: btnG.style.backgroundColor = 'crimson';
+//                 soundG.play();
+//                 break;
+//             case e.which === 72: btnH.style.backgroundColor = 'crimson';
+//                 soundH.play();
+//                 break;
+//         }
+//     });
+//     document.body.addEventListener('keyup', function (e) {
+//         const equalty = e.keyCode === e.which;
+//         switch (equalty) {
+//             case e.which === 81: btnQ.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 87: btnW.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 69: btnE.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 82: btnR.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 84: btnT.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 89: btnY.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 65: btnA.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 83: btnS.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 68: btnD.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 70: btnF.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 71: btnG.style.backgroundColor = 'transparent';
+//                 break;
+//             case e.which === 72: btnH.style.backgroundColor = 'transparent';
+//                 break;
+//         }
+//     })
+// }
+// getSound();
 
-function getSound() {
-    document.body.addEventListener('keydown', function (e) {
-        const equalty = e.keyCode === e.which;
-        switch (equalty) {
-            case e.which === 81: btnQ.style.backgroundColor = 'crimson';
-                soundQ.play();
-                break;
-            case e.which === 87: btnW.style.backgroundColor = 'crimson';
-                soundW.play();
-                break;
-            case e.which === 69: btnE.style.backgroundColor = 'crimson';
-                soundE.play();
-                break;
-            case e.which === 82: btnR.style.backgroundColor = 'crimson';
-                soundR.play();
-                break;
-            case e.which === 84: btnT.style.backgroundColor = 'crimson';
-                soundT.play();
-                break;
-            case e.which === 89: btnY.style.backgroundColor = 'crimson';
-                soundY.play();
-                break;
-            case e.which === 65: btnA.style.backgroundColor = 'crimson';
-                soundA.play();
-                break;
-            case e.which === 83: btnS.style.backgroundColor = 'crimson';
-                soundS.play();
-                break;
-            case e.which === 68: btnD.style.backgroundColor = 'crimson';
-                soundD.play();
-                break;
-            case e.which === 70: btnF.style.backgroundColor = 'crimson';
-                soundF.play();
-                break;
-            case e.which === 71: btnG.style.backgroundColor = 'crimson';
-                soundG.play();
-                break;
-            case e.which === 72: btnH.style.backgroundColor = 'crimson';
-                soundH.play();
-                break;
-        }
-    });
-    document.body.addEventListener('keyup', function (e) {
-        const equalty = e.keyCode === e.which;
-        switch (equalty) {
-            case e.which === 81: btnQ.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 87: btnW.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 69: btnE.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 82: btnR.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 84: btnT.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 89: btnY.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 65: btnA.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 83: btnS.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 68: btnD.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 70: btnF.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 71: btnG.style.backgroundColor = 'transparent';
-                break;
-            case e.which === 72: btnH.style.backgroundColor = 'transparent';
-                break;
-        }
+// function getSoundByMouse() {
+//     btnQ.addEventListener('mousedown', function () {
+//         btnQ.style.backgroundColor = 'crimson';
+//         soundQ.play();
+//     });
+//     btnQ.addEventListener('mouseup', function () {
+//         btnQ.style.backgroundColor = 'transparent';
+//     });
+
+//     btnW.addEventListener('mousedown', function () {
+//         btnW.style.backgroundColor = 'crimson';
+//         soundW.play();
+//     });
+//     btnW.addEventListener('mouseup', function () {
+//         btnW.style.backgroundColor = 'transparent';
+//     });
+
+//     btnE.addEventListener('mousedown', function () {
+//         btnE.style.backgroundColor = 'crimson';
+//         soundE.play();
+//     });
+//     btnE.addEventListener('mouseup', function () {
+//         btnE.style.backgroundColor = 'transparent';
+//     });
+
+//     btnR.addEventListener('mousedown', function () {
+//         btnR.style.backgroundColor = 'crimson';
+//         soundR.play();
+//     });
+//     btnR.addEventListener('mouseup', function () {
+//         btnR.style.backgroundColor = 'transparent';
+//     });
+
+//     btnT.addEventListener('mousedown', function () {
+//         btnT.style.backgroundColor = 'crimson';
+//         soundT.play();
+//     });
+//     btnT.addEventListener('mouseup', function () {
+//         btnT.style.backgroundColor = 'transparent';
+//     });
+
+//     btnY.addEventListener('mousedown', function () {
+//         btnY.style.backgroundColor = 'crimson';
+//         soundY.play();
+//     });
+//     btnY.addEventListener('mouseup', function () {
+//         btnY.style.backgroundColor = 'transparent';
+//     });
+
+//     btnA.addEventListener('mousedown', function () {
+//         btnA.style.backgroundColor = 'crimson';
+//         soundA.play();
+//     });
+//     btnA.addEventListener('mouseup', function () {
+//         btnA.style.backgroundColor = 'transparent';
+//     });
+
+//     btnS.addEventListener('mousedown', function () {
+//         btnS.style.backgroundColor = 'crimson';
+//         soundS.play();
+//     });
+//     btnS.addEventListener('mouseup', function () {
+//         btnS.style.backgroundColor = 'transparent';
+//     });
+
+//     btnD.addEventListener('mousedown', function () {
+//         btnD.style.backgroundColor = 'crimson';
+//         soundD.play();
+//     });
+//     btnD.addEventListener('mouseup', function () {
+//         btnD.style.backgroundColor = 'transparent';
+//     });
+
+//     btnF.addEventListener('mousedown', function () {
+//         btnF.style.backgroundColor = 'crimson';
+//         soundF.play();
+//     });
+//     btnF.addEventListener('mouseup', function () {
+//         btnF.style.backgroundColor = 'transparent';
+//     });
+
+//     btnG.addEventListener('mousedown', function () {
+//         btnG.style.backgroundColor = 'crimson';
+//         soundG.play();
+//     });
+//     btnG.addEventListener('mouseup', function () {
+//         btnG.style.backgroundColor = 'transparent';
+//     });
+
+//     btnH.addEventListener('mousedown', function () {
+//         btnH.style.backgroundColor = 'crimson';
+//         soundH.play();
+//     });
+//     btnH.addEventListener('mouseup', function () {
+//         btnH.style.backgroundColor = 'transparent';
+//     });
+// }
+// getSoundByMouse();
+
+function getSoundShortly() {
+    document.addEventListener('keydown', function (e) {
+        e.style.backgroundColor = 'crimson';
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+        if (!audio) return;
+        audio.play();
+    })
+    document.addEventListener('keyup', function (e) {
+        e.style.backgroundColor = 'transparent';
     })
 }
-getSound();
+getSoundShortly();
 
-function getSoundByMouse() {
-    btnQ.addEventListener('mousedown', function () {
-        btnQ.style.backgroundColor = 'crimson';
-        soundQ.play();
-    });
-    btnQ.addEventListener('mouseup', function () {
-        btnQ.style.backgroundColor = 'transparent';
-    });
-
-    btnW.addEventListener('mousedown', function () {
-        btnW.style.backgroundColor = 'crimson';
-        soundW.play();
-    });
-    btnW.addEventListener('mouseup', function () {
-        btnW.style.backgroundColor = 'transparent';
-    });
-
-    btnE.addEventListener('mousedown', function () {
-        btnE.style.backgroundColor = 'crimson';
-        soundE.play();
-    });
-    btnE.addEventListener('mouseup', function () {
-        btnE.style.backgroundColor = 'transparent';
-    });
-
-    btnR.addEventListener('mousedown', function () {
-        btnR.style.backgroundColor = 'crimson';
-        soundR.play();
-    });
-    btnR.addEventListener('mouseup', function () {
-        btnR.style.backgroundColor = 'transparent';
-    });
-
-    btnT.addEventListener('mousedown', function () {
-        btnT.style.backgroundColor = 'crimson';
-        soundT.play();
-    });
-    btnT.addEventListener('mouseup', function () {
-        btnT.style.backgroundColor = 'transparent';
-    });
-
-    btnY.addEventListener('mousedown', function () {
-        btnY.style.backgroundColor = 'crimson';
-        soundY.play();
-    });
-    btnY.addEventListener('mouseup', function () {
-        btnY.style.backgroundColor = 'transparent';
-    });
-
-    btnA.addEventListener('mousedown', function () {
-        btnA.style.backgroundColor = 'crimson';
-        soundA.play();
-    });
-    btnA.addEventListener('mouseup', function () {
-        btnA.style.backgroundColor = 'transparent';
-    });
-
-    btnS.addEventListener('mousedown', function () {
-        btnS.style.backgroundColor = 'crimson';
-        soundS.play();
-    });
-    btnS.addEventListener('mouseup', function () {
-        btnS.style.backgroundColor = 'transparent';
-    });
-
-    btnD.addEventListener('mousedown', function () {
-        btnD.style.backgroundColor = 'crimson';
-        soundD.play();
-    });
-    btnD.addEventListener('mouseup', function () {
-        btnD.style.backgroundColor = 'transparent';
-    });
-
-    btnF.addEventListener('mousedown', function () {
-        btnF.style.backgroundColor = 'crimson';
-        soundF.play();
-    });
-    btnF.addEventListener('mouseup', function () {
-        btnF.style.backgroundColor = 'transparent';
-    });
-
-    btnG.addEventListener('mousedown', function () {
-        btnG.style.backgroundColor = 'crimson';
-        soundG.play();
-    });
-    btnG.addEventListener('mouseup', function () {
-        btnG.style.backgroundColor = 'transparent';
-    });
-
-    btnH.addEventListener('mousedown', function () {
-        btnH.style.backgroundColor = 'crimson';
-        soundH.play();
-    });
-    btnH.addEventListener('mouseup', function () {
-        btnH.style.backgroundColor = 'transparent';
-    });
-}
-getSoundByMouse();
