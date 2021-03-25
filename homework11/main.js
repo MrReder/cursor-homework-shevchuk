@@ -210,7 +210,6 @@ function getSoundShortly() {
     document.addEventListener('keyup', function (e) {
         const btn = document.querySelector(`.single-button[data-key="${e.keyCode}"]`);
         btn.classList.remove('btn-down');
-        btn.classList.add('btn-up');
     })
     // document.addEventListener('mousedown', function (e) {
     //     const click = document.querySelector(`.single-button[data-key="${e.target}"]`);
