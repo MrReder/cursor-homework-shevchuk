@@ -24,13 +24,24 @@ function getTotalTaxes(country) {
 console.log(`Amount of taxes of all specialists in choosen country is:`, getTotalTaxes.call(litva));
 
 //4 
+// function getMySalary(country) {
+//     const minSalary = 1500;
+//     const maxSalary = 2000;
+//     const salary = Math.ceil(minSalary + Math.random() * (maxSalary + 1 - minSalary));
+//     const taxes = this.tax * salary;
+//     const profit = salary - taxes;
+//     return { salary, taxes, profit };
+// }
+// setInterval(console.log(`If I would live in choosen country my salary, taxes and Net profit could be:`, getMySalary.call(latvia)), 10000);
+
 function getMySalary(country) {
     const minSalary = 1500;
     const maxSalary = 2000;
-    let salary = Math.ceil(minSalary + Math.random() * (maxSalary + 1 - minSalary));
-    let taxes = this.tax * salary;
-    let profit = salary - taxes;
-    return { salary: salary, taxes: taxes, profit: profit };
+    const salary = Math.ceil(minSalary + Math.random() * (maxSalary + 1 - minSalary));
+    const taxes = this.tax * salary;
+    const profit = salary - taxes;
+    setInterval(() => {
+        return { salary, taxes, profit };
+    }, 1000)
 }
-setInterval("console.log(`If I would live in choosen country my salary, taxes and Net profit could be:`, getMySalary.call(latvia))", 10000);
-
+console.log(`If I would live in choosen country my salary, taxes and Net profit could be:`, getMySalary.call(latvia));
