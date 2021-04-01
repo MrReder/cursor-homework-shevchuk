@@ -1,7 +1,7 @@
 "use strict";
 
 const getNFOBtn = document.querySelector('.get-info-btn');
-getNFOBtn.addEventListener('click', getNFO);
+getNFOBtn.addEventListener('click', getNFO());
 
 
 async function getNFO() {
@@ -18,16 +18,36 @@ async function getNFO() {
             .then((res) => {
                 return res.data
             })
-        personsObj = {
+        personsObj[i] = {
             name: peopleData.name,
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
-        const person = document.createElement('div');
-        person.innerHTML = personsObj;
+        console.log(personsObj[i]);
 
+        // const persons = docuemnt.querySelector('.people-wrapper');
 
-
+        // persons.style.cssText = `display: grid;
+        // justify-content: center;
+        // grid-template-columns: 50px 50px 50px 50px;
+        // grid-template-rows: 50px 50px 50px 50px;
+        // margin-top: 50px;
+        // margin-bottom: 50px}`;
+        // function generatePersonsList() {
+        //     for (let i = 0; i < 16; i++) {
+        //         const person = document.createElement('div');
+        //         person.style.cssText = `height: 50px;
+        //         width: 50px;
+        //         border: solid 2px`;
+        //         persons.appendChild(person);
+        //     }
+        // }
+        // generatePersonsList();
+        // firstBtn.addEventListener('click', function () {
+        //     generateBlocks();
+        //     const container = document.querySelector('.buttons-container');
+        //     container.removeChild(firstBtn);
+        // });
     }
 
 
