@@ -17,14 +17,20 @@ async function getNFO() {
             .then((res) => {
                 return res.data
             })
-        personsObj[i] = {
+        personsObj = {
             name: peopleData.name,
             birthYear: peopleData.birth_year,
-            gender: peopleData.gender,
+            gender: peopleData.gender
         }
-        const personsArr = [];
-        personsArr.push(personsObj)
-        console.log(personsArr)
+        const personsContainer = document.querySelector('.people-wrapper');
+        for (let i = 0; i < 16; i++) {
+            const eachPerson = personsContainer.appendChild('div');
+            eachPerson.innerHTML = `<p class="person">${personsObj.name}</p><br>
+        <p class="person">${personsObj.birthYear}</p><br>
+        <p class="person">${personsObj.gender}</p><br>`
+        }
+
+        //document.p.innerHTML = `<p class="person">${personsObj.name}</p>`;
 
     }
 
