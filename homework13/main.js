@@ -10,28 +10,25 @@ async function getNFO() {
             return res.data
         });
     const charactersUrls = episode5Data.characters;
-    // const firstPerson = await axios.get('http://swapi.dev/api/people/1/')
-    //     .then((res) => {
-    //         return res.data.name
-    //     })
-    // console.log(firstPerson);
-    for (let i = 0; i < charactersUrls; i++) {
-        const names = await axios.get(`https${charactersUrls[i].substring(4)}`)
+
+    let personsObj = {};
+
+    for (let i = 0; i < charactersUrls.length; i++) {
+        const peopleData = await axios.get(charactersUrls[i])
             .then((res) => {
-                res.charactersUrls.map((e) => {
-                    return console.log(e.data.name);
-                })
+                return res.data
             })
+        personsObj = {
+            name: peopleData.name,
+            birthYear: peopleData.birth_year,
+            gender: peopleData.gender
+        }
+        const person = document.createElement('div');
+        person.innerHTML = personsObj;
 
-        console.log(names);
+
+
     }
-
-    // for (let i = 0; i < charactersUrls; i++) {
-    //     const names = await axios.get(`https${charactersUrls[i].substring(4)}`)
-    //         .then((res) => {
-    //             console.log(res.data.names)
-    //         })
-    // }
 
 
 }
