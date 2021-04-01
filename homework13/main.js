@@ -22,7 +22,7 @@ async function getNFO() {
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
-        const personsContainer = document.querySelector('.people-wrapper');
+        const personsContainer = document.getElementsByClassName('.people-wrapper');
         for (let i = 0; i < 16; i++) {
             const eachPerson = personsContainer.appendChild('div');
             eachPerson.innerHTML = `<p class="person">${personsObj.name}</p><br>
