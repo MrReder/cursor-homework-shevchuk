@@ -13,15 +13,17 @@ async function getNFO() {
     const charactersArr = [];
     charactersArr.push(charactersUrls);
     console.log(charactersArr);
+    // const firstPerson = await axios.get('http://swapi.dev/api/people/1/')
+    //     .then((res) => {
+    //         return res.data.name
+    //     })
+    // console.log(firstPerson);
     for (let i = 0; i < charactersArr; i++) {
         const names = await axios.get(`${charactersArr[i]}`)
             .then((res) => {
-                res.map((e) => {
-                    return console.log(e.name)
-                })
+                return res.data.names
             })
         console.log(names);
-
     }
     //     const infoObj = {
     //         name: await axios.get(`https${charactersArr[i]}`)
@@ -38,13 +40,6 @@ async function getNFO() {
     //             }),
     //     }
     // }
-
-    // charactersArr.push({
-    //     name: charactersUrls.name,
-    //     birthYear: charactersUrls.birth_year,
-    //     gender: charactersUrls.gender
-    // })
-    // console.log(charactersArr)
 
 }
 
