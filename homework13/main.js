@@ -3,8 +3,9 @@
 const getNFOBtn = document.querySelector('.get-info-btn');
 getNFOBtn.addEventListener('click', getNFO);
 
-
 async function getNFO() {
+    const backgroundSound = document.querySelector('audio');
+    backgroundSound.play();
     const episode5Data = await axios.get('https://swapi.dev/api/films/2/')
         .then((res) => {
             return res.data
@@ -43,35 +44,13 @@ async function getNFO() {
             margin-right: 15px;
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
-            console.log(person);
-            personsObj.forEach((obj) => {
-                obj.person.innerHTML = `${personsObj.name} <br>
-                ${personsObj.birthYear} <br>
-                ${personsObj.gender}`;
-            })
-            const getNFOBtn = document.querySelector('.get-info-btn');
-            getNFOBtn.addEventListener('click', generatePersonsDivs);
+            person.innerHTML = `${personsObj.name} <br>
+            ${personsObj.birthYear} <br>
+            ${personsObj.gender}`;
         }
-
-
-
+        generatePersonsDivs();
     }
 }
 
 
-// const firstBtn = document.querySelector('.firstMagic');
-// function generateBlocks() {
-//     for (let i = 0; i < 25; i++) {
-//         const block = document.createElement('div');
-//         block.style.cssText = `height: 50px;
-//         width: 50px;
-//         border: solid 2px`;
-//         block.style.backgroundColor = getBackgroundColor();
-//         blocks.appendChild(block);
-//     }
-// }
-// firstBtn.addEventListener('click', function () {
-//     generateBlocks();
-//     const container = document.querySelector('.buttons-container');
-//     container.removeChild(firstBtn);
-// });
+
