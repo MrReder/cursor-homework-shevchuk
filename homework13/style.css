@@ -87,13 +87,6 @@ p, a, button, form, span{
     font-family: var(--font-text);
 }
 
-.information-wrapper{
-    background-color: var(--c-main-dark);
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    position: relative;
-}
 
 .main-img{
     display: flex;
