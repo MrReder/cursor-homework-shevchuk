@@ -22,19 +22,42 @@ async function getNFO() {
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
-        const personsContainer = document.getElementsByClassName('.people-wrapper');
-        for (let i = 0; i < 16; i++) {
-            const eachPerson = personsContainer.appendChild('div');
-            eachPerson.innerHTML = `<p class="person">${personsObj.name}</p><br>
-        <p class="person">${personsObj.birthYear}</p><br>
-        <p class="person">${personsObj.gender}</p><br>`
+        console.log(personsObj);
+        const persons = document.querySelector('.people-wrapper');
+        persons.style.cssText = `display: grid;
+        justify-content: center;
+        grid-template-columns: 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        position: relative;
+        z-index: 3`;
+        function generatePersonsDivs() {
+            const person = document.createElement('div');
+            person.style.cssText = `height: 200px;
+            width: 200px;
+            border: solid 2px;
+            border-color: rgb(172, 104, 3)`;
+            persons.appendChild(person);
         }
-
-        //document.p.innerHTML = `<p class="person">${personsObj.name}</p>`;
+        const getNFOBtn = document.querySelector('.get-info-btn');
+        getNFOBtn.addEventListener('click', generatePersonsDivs);
 
     }
-
-
 }
 
-getNFO();
+
+// const firstBtn = document.querySelector('.firstMagic');
+// function generateBlocks() {
+//     for (let i = 0; i < 25; i++) {
+//         const block = document.createElement('div');
+//         block.style.cssText = `height: 50px;
+//         width: 50px;
+//         border: solid 2px`;
+//         block.style.backgroundColor = getBackgroundColor();
+//         blocks.appendChild(block);
+//     }
+// }
+// firstBtn.addEventListener('click', function () {
+//     generateBlocks();
+//     const container = document.querySelector('.buttons-container');
+//     container.removeChild(firstBtn);
+// });
