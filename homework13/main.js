@@ -31,7 +31,6 @@ async function getNFO() {
         grid-template-rows: 220px 220px 220px 220px;
         padding-left: 120px;
         position: relative;
-        -webkit-user-modify: read-write-plaintext-only;
         z-index: 3`;
 
         function generatePersonsDivs() {
@@ -47,9 +46,14 @@ async function getNFO() {
             align-items: space-around;
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
-            person.innerHTML = `${personsObj.name} <br>
-            ${personsObj.birthYear} <br>
-            ${personsObj.gender}`;
+            person.insertAdjacentHTML('beforeend', `
+                <img class="character__photo" src="${(personsObj.name).replace(' ', '_').toLowerCase()}.jpg" alt="character photo">
+                    <p class="character-name"> ${personsObj.name}</p>
+                    <p class="character-birth-year"> ${personsObj.birthYear}</p>
+                    <p class="character-gender"> ${personsObj.gender}</p>`);
+            //         `${personsObj.name} <br>
+            // ${personsObj.birthYear} <br>
+            // ${personsObj.gender}`;
         }
         generatePersonsDivs();
     }
