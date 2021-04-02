@@ -43,12 +43,15 @@ async function getNFO() {
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
             console.log(person);
-            person.innerHTML = `${personsObj.name} <br>
-            ${personsObj.birthYear} <br>
-            ${personsObj.gender}`;
+            personsObj.forEach((obj) => {
+                obj.person.innerHTML = `${personsObj.name} <br>
+                ${personsObj.birthYear} <br>
+                ${personsObj.gender}`;
+            })
+            const getNFOBtn = document.querySelector('.get-info-btn');
+            getNFOBtn.addEventListener('click', generatePersonsDivs);
         }
-        const getNFOBtn = document.querySelector('.get-info-btn');
-        getNFOBtn.addEventListener('click', generatePersonsDivs);
+
 
     }
 }
