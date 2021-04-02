@@ -1,7 +1,7 @@
 "use strict";
 
 const getNFOBtn = document.querySelector('.get-info-btn');
-getNFOBtn.addEventListener('click', getNFO());
+getNFOBtn.addEventListener('click', getNFO);
 
 
 async function getNFO() {
@@ -22,6 +22,7 @@ async function getNFO() {
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
+        console.log(personsObj);
         const persons = document.querySelector('.people-wrapper');
         persons.style.cssText = `display: grid;
         justify-content: center;
@@ -51,6 +52,7 @@ async function getNFO() {
             const getNFOBtn = document.querySelector('.get-info-btn');
             getNFOBtn.addEventListener('click', generatePersonsDivs);
         }
+
 
 
     }
