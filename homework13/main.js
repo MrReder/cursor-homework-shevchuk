@@ -39,7 +39,7 @@ async function getNFO() {
             text-align: right;
             font-size: 24px;
             font-weight: bolder;
-            margin-left: 10px;
+            margin-right: 15px;
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
             console.log(person);
