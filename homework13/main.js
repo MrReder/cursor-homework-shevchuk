@@ -25,19 +25,22 @@ async function getNFO() {
         const persons = document.querySelector('.people-wrapper');
         persons.style.cssText = `display: grid;
         justify-content: center;
-        grid-template-columns: 350px 350px 350px 350px;
+        grid-template-columns: 450px 450px 450px 450px;
         grid-template-rows: 220px 220px 220px 220px;
-        padding-left: 100px;
+        padding-left: 120px;
         position: relative;
         z-index: 3`;
         function generatePersonsDivs() {
             const person = document.createElement('div');
             person.style.cssText = `height: 200px;
-            width: 200px;
+            width: 300px;
             border: solid 2px;
             border-color: rgb(172, 104, 3);
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
+            person.textContent = `${personsObj.name} <br>
+            ${personsObj.birthYear} <br>
+            ${personsObj.gender}`;
         }
         const getNFOBtn = document.querySelector('.get-info-btn');
         getNFOBtn.addEventListener('click', generatePersonsDivs);
