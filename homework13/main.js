@@ -23,7 +23,7 @@ async function getNFO() {
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
-        console.log(personsObj);
+
         const persons = document.querySelector('.people-wrapper');
         persons.style.cssText = `display: grid;
         justify-content: center;
@@ -42,6 +42,7 @@ async function getNFO() {
             font-size: 24px;
             font-weight: bolder;
             margin-right: 15px;
+            align-items: space-around;
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
             person.innerHTML = `${personsObj.name} <br>
