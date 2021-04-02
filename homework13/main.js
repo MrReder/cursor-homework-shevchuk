@@ -38,7 +38,8 @@ async function getNFO() {
             border-color: rgb(172, 104, 3);
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
-            person.textContent = `${personsObj.name} <br>
+            console.log(person);
+            person.innerHTML = `${personsObj.name} <br>
             ${personsObj.birthYear} <br>
             ${personsObj.gender}`;
         }
