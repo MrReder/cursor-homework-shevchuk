@@ -22,12 +22,12 @@ async function getNFO() {
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
-        console.log(personsObj);
         const persons = document.querySelector('.people-wrapper');
         persons.style.cssText = `display: grid;
         justify-content: center;
-        grid-template-columns: 100px 100px 100px 100px;
-        grid-template-rows: 100px 100px 100px;
+        grid-template-columns: 350px 350px 350px 350px;
+        grid-template-rows: 220px 220px 220px 220px;
+        padding-left: 100px;
         position: relative;
         z-index: 3`;
         function generatePersonsDivs() {
@@ -35,7 +35,8 @@ async function getNFO() {
             person.style.cssText = `height: 200px;
             width: 200px;
             border: solid 2px;
-            border-color: rgb(172, 104, 3)`;
+            border-color: rgb(172, 104, 3);
+            background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
         }
         const getNFOBtn = document.querySelector('.get-info-btn');
