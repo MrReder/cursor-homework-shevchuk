@@ -23,6 +23,7 @@ async function getNFO() {
             birthYear: peopleData.birth_year,
             gender: peopleData.gender
         }
+        console.log(personsObj);
 
         const persons = document.querySelector('.people-wrapper');
         persons.style.cssText = `display: grid;
@@ -40,20 +41,19 @@ async function getNFO() {
             border: solid 2px;
             border-color: rgb(172, 104, 3);
             text-align: right;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bolder;
             margin-right: 15px;
             align-items: space-around;
             background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
             persons.appendChild(person);
             person.insertAdjacentHTML('beforeend', `
-                <img class="character__photo" src="${(personsObj.name).replace(' ', '_').toLowerCase()}.jpg" alt="character photo">
-                    <p class="character-name"> ${personsObj.name}</p>
-                    <p class="character-birth-year"> ${personsObj.birthYear}</p>
-                    <p class="character-gender"> ${personsObj.gender}</p>`);
-            //         `${personsObj.name} <br>
-            // ${personsObj.birthYear} <br>
-            // ${personsObj.gender}`;
+                <img class="person-photo" src="./img/persons/${(personsObj.name).replace(' ', '_', '-').toLowerCase()}.jpg" alt="character photo">
+                     <div class="info-container">
+                    <p class="person-name"> ${personsObj.name}</p>
+                    <p class="person-birth-year"> ${personsObj.birthYear}</p>
+                    <p class="person-gender"> ${personsObj.gender}</p>
+                    </div>`);
         }
         generatePersonsDivs();
     }
