@@ -125,6 +125,7 @@ p, a, button, form, span{
     position: relative;
     z-index: 2;
     border-radius: 20%;
+    box-shadow: coral 3px 3px;
 }
 
 
@@ -136,4 +137,9 @@ p, a, button, form, span{
     margin-bottom: 100px;
     z-index: 3;
     position: relative;
+}
+
+.gender-img{
+width: 15px;
+height: 15px;
 }

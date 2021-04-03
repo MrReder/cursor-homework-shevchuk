@@ -21,7 +21,10 @@ async function getNFO() {
         personsObj = {
             name: peopleData.name,
             birthYear: peopleData.birth_year,
-            gender: peopleData.gender
+            gender: peopleData.gender,
+            genderImg: () => {
+
+            }
         }
         console.log(personsObj);
 
@@ -54,6 +57,16 @@ async function getNFO() {
                     <p class="person-birth-year"> ${personsObj.birthYear}</p>
                     <p class="person-gender"> ${personsObj.gender}</p>
                     </div>`);
+            // if (personsObj.gender === 'male') {
+            //     personsObj.gender.insertAdjacentHTML('beforeend', `
+            //     <img src="./img/gender/male.png class="gender-img">`);
+            // } else if (personsObj.gender === 'female') {
+            //     personsObj.gender.insertAdjacentHTML('beforeend', `
+            //     <img src="./img/gender/female.png class="gender-img">`);
+            // } else {
+            //     personsObj.gender.insertAdjacentHTML('beforeend', `
+            //     <img src="./img/gender/other.png class="gender-img">`);
+            // }
         }
         generatePersonsDivs();
     }
