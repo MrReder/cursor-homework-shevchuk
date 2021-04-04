@@ -99,14 +99,21 @@ p, a, button, form, span{
     left: -27%;
 }
 
-.get-info-btn{
+.buttons-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.btn{
     display: flex;
     flex-direction: column;
     align-self: center;
     position: relative;
     z-index: 2;
     margin-top: 3%;
-    left: 48%;
+    left: 38%;
+    margin-left: 50px;
     background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208));
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
