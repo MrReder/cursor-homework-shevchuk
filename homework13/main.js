@@ -12,6 +12,8 @@ async function getNFO() {
     const backgroundSound = document.querySelector('audio');
     backgroundSound.play();
     getNFOBtn.remove();
+    const planets = document.querySelector('.planets-wrapper');
+    planets.remove();
     const episode5Data = await axios.get('https://swapi.dev/api/films/2/')
         .then((res) => {
             return res.data
