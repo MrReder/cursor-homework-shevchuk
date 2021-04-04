@@ -63,16 +63,20 @@ async function getNFO() {
                     <p class="person-birth-year"> ${personsObj.birthYear}</p>
                     <p class="person-gender"> ${personsObj.gender}</p>
                     </div>`);
-            // if (personsObj.gender === 'male') {
-            //     personsObj.gender.insertAdjacentHTML('beforeend', `
-            //     <img src="./img/gender/male.png class="gender-img">`);
-            // } else if (personsObj.gender === 'female') {
-            //     personsObj.gender.insertAdjacentHTML('beforeend', `
-            //     <img src="./img/gender/female.png class="gender-img">`);
-            // } else {
-            //     personsObj.gender.insertAdjacentHTML('beforeend', `
-            //     <img src="./img/gender/other.png class="gender-img">`);
-            // }
+            const male = document.createElement('img');
+            const female = document.createElement('img');
+            const other = document.createElement('img');
+            male.classList.add('gender-icon');
+            female.classList.add('gender-icon');
+            other.classList.add('gender-icon');
+
+            if (personsObj.gender === 'male') {
+                person.append(male);
+            } else if (personsObj.gender === 'female') {
+                person.append(female);
+            } else {
+                person.append(other);
+            }
         }
         generatePersonsDivs();
     }
