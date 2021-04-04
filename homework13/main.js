@@ -95,18 +95,20 @@ async function getPlanets() {
     const previousInfo = document.querySelector('.people-wrapper');
     previousInfo.remove();
     getPlanetsBtn.remove();
-    for (let i = 0; i < 10; i++) {
-        const episode5DataPlanets = await axios.get('https://swapi.dev/api/planets/')
-            .then((res) => {
-                return res.data.results;
-            });
-        const planets = document.querySelector('.planets-wrapper');
-        const planet = document.createElement('p');
-        planet.classList.add('single-planet');
-        planets.appendChild(planet);
-        planet.innerText = episode5DataPlanets[i];
+    const episode5DataPlanets = await axios.get('https://swapi.dev/api/planets/')
+        .then((res) => {
+            return res.data.results;
+        });
+    console.log(episode5DataPlanets);
+    const planets = document.querySelector('.planets-wrapper');
+    const planet = document.createElement('p');
+    planet.classList.add('single-planet');
+    planets.appendChild(planet);
+    planet.innerText = episode5DataPlanets.forEach((e) => {
+        return e.name;
+    });
 
-    }
+
 
 
     // const nextBtn = null;
