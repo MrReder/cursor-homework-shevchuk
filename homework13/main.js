@@ -104,6 +104,7 @@ async function getPlanets() {
         const planet = document.createElement('p');
         planet.classList.add('single-planet');
         planets.appendChild(planet);
+        planet.innerText = episode5DataPlanets;
 
     }
 
