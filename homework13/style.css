@@ -147,6 +147,17 @@ p, a, button, form, span{
 }
 
 .gender-icon{
-width: 15px;
-height: 15px;
+width: 18px;
+height: 18px;
+z-index: 4;
+position: relative;
+top: -70%;
+left: -25%;
+background: transparent;
+border-radius: 50%;
 }
+
+.female-icon{
+    left: -30%;
+}
+

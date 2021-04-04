@@ -27,12 +27,8 @@ async function getNFO() {
         personsObj = {
             name: peopleData.name,
             birthYear: peopleData.birth_year,
-            gender: peopleData.gender,
-            // genderImg: () => {
-
-            // }
+            gender: peopleData.gender
         }
-        console.log(personsObj);
 
         const persons = document.querySelector('.people-wrapper');
         persons.style.cssText = `display: grid;
@@ -64,19 +60,26 @@ async function getNFO() {
                     <p class="person-gender"> ${personsObj.gender}</p>
                     </div>`);
             const male = document.createElement('img');
-            const female = document.createElement('img');
-            const other = document.createElement('img');
+            male.src = "./img/gender/male.png";
             male.classList.add('gender-icon');
+
+            const female = document.createElement('img');
+            female.src = "./img/gender/female.png";
             female.classList.add('gender-icon');
+            female.classList.add('female-icon');
+
+            const other = document.createElement('img');
+            other.src = "./img/gender/other.png";
             other.classList.add('gender-icon');
 
             if (personsObj.gender === 'male') {
-                person.append(male);
+                person.appendChild(male);
             } else if (personsObj.gender === 'female') {
-                person.append(female);
+                person.appendChild(female);
             } else {
-                person.append(other);
+                person.appendChild(other);
             }
+
         }
         generatePersonsDivs();
     }
@@ -92,13 +95,19 @@ async function getPlanets() {
     const previousInfo = document.querySelector('.people-wrapper');
     previousInfo.remove();
     getPlanetsBtn.remove();
+    for (let i = 0; i < 10; i++) {
+        const episode5DataPlanets = await axios.get('https://swapi.dev/api/planets/')
+            .then((res) => {
+                return res.data.results;
+            });
+        const planets = document.querySelector('.planets-wrapper');
+        const planet = document.createElement('p');
+        planet.classList.add('single-planet');
+        planets.appendChild(planet);
 
-    const episode5DataPlanets = await axios.get('https://swapi.dev/api/planets')
-        .then((res) => {
-            const planetsPage = res.results;
-            return planetsPage;
-        });
-    console.log(episode5DataPlanets);
+    }
+
+
     // const nextBtn = null;
     // nextBtn.innerHTML = `<button>Next</button>`;
 
