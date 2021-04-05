@@ -99,10 +99,17 @@ async function getPlanets() {
     const nextBtn = document.querySelector('#next-btn');
     nextBtn.style.display = 'block';
     nextBtn.addEventListener('click', getNextPlanets);
-    async function getNextPlanets(currentPlanetsPage) {
-        currentPlanetsPage += 1;
-        const res = await axios.get('https://swapi.dev/api/planets/' + '?page=' + currentPlanetsPage);
-        return res.data.results;
+    async function getNextPlanets() {
+        let currentPlanetsPage = 1;
+        currentPlanetsPage++
+        if (nextBtn) {
+            currentPlanetsPage += 1;
+        } else if (currentPlanetsPage === 6) {
+            nextBtn.style.display = 'none';
+        }
+
+        const res = await axios.get(`https://swapi.dev/api/planets/?page=${currentPlanetsPage}`);
+        return console.log(res.data.results);
     }
 }
 
