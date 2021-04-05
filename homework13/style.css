@@ -161,7 +161,62 @@ border-radius: 50%;
     left: -30%;
 }
 
-.single-planet{
-    display: flex;
+.planets-wrapper{
+background-color: #253045;
+width: fit-content;
+position: absolute;
+z-index: 4;
+left: 47.5%;    
+
 }
 
+.single-planet{
+    display: flex;
+    background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208));
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.people-wrapper{
+    display: grid;
+        justify-content: center;
+        grid-template-columns: 450px 450px 450px 450px;
+        grid-template-rows: 220px 220px 220px 220px;
+        padding-left: 120px;
+        position: relative;
+        z-index: 3;
+}
+
+.person-container{
+    height: 200px;
+    width: 300px;
+    border: solid 2px;
+    border-color: rgb(172, 104, 3);
+    text-align: right;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 15px;
+    align-items: space-around;
+    background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208));
+}
+
+#next-btn{
+    display: none;
+    position: absolute;
+    top: 65%;
+    left: 46%;
+    z-index: 5;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 3%;
+    margin-left: 50px;
+    background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208));
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 5%;
+    text-decoration: none;
+}

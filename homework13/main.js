@@ -14,6 +14,8 @@ async function getNFO() {
     getNFOBtn.remove();
     const planets = document.querySelector('.planets-wrapper');
     planets.remove();
+    const nextBtn = document.querySelector('#next-btn');
+    nextBtn.style.display = 'none';
     const episode5Data = await axios.get('https://swapi.dev/api/films/2/')
         .then((res) => {
             return res.data
@@ -33,26 +35,10 @@ async function getNFO() {
         }
 
         const persons = document.querySelector('.people-wrapper');
-        persons.style.cssText = `display: grid;
-        justify-content: center;
-        grid-template-columns: 450px 450px 450px 450px;
-        grid-template-rows: 220px 220px 220px 220px;
-        padding-left: 120px;
-        position: relative;
-        z-index: 3`;
 
         function generatePersonsDivs() {
             const person = document.createElement('div');
-            person.style.cssText = `height: 200px;
-            width: 300px;
-            border: solid 2px;
-            border-color: rgb(172, 104, 3);
-            text-align: right;
-            font-size: 20px;
-            font-weight: bolder;
-            margin-right: 15px;
-            align-items: space-around;
-            background: linear-gradient(to bottom right, rgb(172, 104, 3), rgb(252, 252, 208))`;
+            person.classList.add('person-container');
             persons.appendChild(person);
             person.insertAdjacentHTML('beforeend', `
                 <img class="person-photo" src="./img/persons/${(personsObj.name).replace(' ', '_', '-').toLowerCase()}.jpg" alt="character photo">
@@ -101,28 +87,23 @@ async function getPlanets() {
         .then((res) => {
             return res.data.results;
         });
-    console.log(episode5DataPlanets);
     const planets = document.querySelector('.planets-wrapper');
-    const planet = document.createElement('p');
-    planet.classList.add('single-planet');
-    planets.append(planet);
-    planet.innerText = episode5DataPlanets.map((e) => {
-        return e.name;
-    });
-
-
-
-
-
-
-
-
-
-    // const nextBtn = null;
-    // nextBtn.innerHTML = `<button>Next</button>`;
-
-
-
+    episode5DataPlanets.forEach((e) => {
+        for (let i = 0; i < episode5DataPlanets.length; i++) {
+            const planet = document.createElement('p');
+            planet.classList.add('single-planet');
+            planets.append(planet);
+            return planet.innerText = e.name;
+        }
+    })
+    const nextBtn = document.querySelector('#next-btn');
+    nextBtn.style.display = 'block';
+    nextBtn.addEventListener('click', getNextPlanets);
+    async function getNextPlanets(currentPlanetsPage) {
+        currentPlanetsPage += 1;
+        const res = await axios.get('https://swapi.dev/api/planets/' + '?page=' + currentPlanetsPage);
+        return res.data.results;
+    }
 }
 
 
