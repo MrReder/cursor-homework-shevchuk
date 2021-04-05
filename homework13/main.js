@@ -105,10 +105,15 @@ async function getPlanets() {
     const planets = document.querySelector('.planets-wrapper');
     const planet = document.createElement('p');
     planet.classList.add('single-planet');
-    planets.appendChild(planet);
+    planets.append(planet);
     planet.innerText = episode5DataPlanets.map((e) => {
         return e.name;
     });
+
+
+
+
+
 
 
 

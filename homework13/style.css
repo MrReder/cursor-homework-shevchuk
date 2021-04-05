@@ -161,3 +161,7 @@ border-radius: 50%;
     left: -30%;
 }
 
+.single-planet{
+    display: flex;
+}
+
