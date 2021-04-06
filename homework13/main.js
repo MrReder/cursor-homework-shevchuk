@@ -101,18 +101,23 @@ async function getPlanets() {
     nextBtn.style.display = 'block';
     nextBtn.addEventListener('click', getNextPlanets);
     let currentPlanetsPage = 1;
-    function getNextPlanets() {
+    async function getNextPlanets() {
         if (currentPlanetsPage < 6) {
             currentPlanetsPage++
+            const res = await axios.get(`https://swapi.dev/api/planets/?page=${currentPlanetsPage}`);
+            return res.data.results.forEach((e) => {
+                for (let i = 0; i < res.data.results.length; i++) {
+                    const planet = document.createElement('p');
+                    planet.classList.add('single-planet');
+                    planets.append(planet);
+                    return planet.innerText = e.name;
+                }
+            })
         } else {
             nextBtn.style.display = 'none';
         }
         console.log(currentPlanetsPage);
     }
-    const res = await axios.get(`https://swapi.dev/api/planets/?page=${currentPlanetsPage}`)
-        .then((res) => {
-            return console.log(res.data.results);
-        })
 }
 
 
