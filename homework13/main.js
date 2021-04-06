@@ -76,7 +76,6 @@ async function getNFO() {
 
 
 async function getPlanets() {
-    const planets = document.querySelector('.planets-wrapper');
     const previousBackgroundSound = document.querySelector('.info-sound');
     previousBackgroundSound.remove();
     const backgroundSound = document.querySelector('.planets-sound');
