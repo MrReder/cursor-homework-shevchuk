@@ -19,6 +19,8 @@ console.log(idGenerator.next().value);
 const btnUp = document.querySelector('#up-btn');
 const btnDown = document.querySelector('#down-btn');
 const h1 = document.querySelector('h1');
+
+//It`s not work
 // btnUp.addEventListener('click', function* () {
 //     let fontSize = 14;
 //     yield fontSize += 2;
@@ -39,8 +41,16 @@ btnUp.addEventListener('click', function* (start = 14, end = 60, step = 2) {
     }
 });
 
+btnDown.addEventListener('click', function* (start = 14, end = 60, step = 2) {
+    let fontSizeDown = start;
+    if (fontSizeDown < end) {
+        fontSizeDown -= step;
+        yield h1.style.fontSize = `${fontSizeDown}px`;
+    }
+});
 
 
+//It works somehow
 // function* newFontGenerator(start = 14, end = 30, step = 2) {
 //     for (let fontSizeUp = start; fontSizeUp < end; fontSizeUp += step) {
 //         yield setInterval(() => {
