@@ -19,17 +19,27 @@ console.log(idGenerator.next().value);
 const btnUp = document.querySelector('#up-btn');
 const btnDown = document.querySelector('#down-btn');
 const h1 = document.querySelector('h1');
-btnUp.addEventListener('click', function* () {
-    let fontSize = 14;
-    yield fontSize += 2;
-    h1.style.fontSize = `${fontSize}px`;
+// btnUp.addEventListener('click', function* () {
+//     let fontSize = 14;
+//     yield fontSize += 2;
+//     h1.style.fontSize = `${fontSize}px`;
+// });
+
+// btnDown.addEventListener('click', function* () {
+//     let fontSize = 14;
+//     yield fontSize -= 2;
+//     h1.style.fontSize = `${fontSize}px`;
+// });
+
+btnUp.addEventListener('click', function* (start = 14, end = 60, step = 2) {
+    let fontSizeUp = start;
+    if (fontSizeUp < end) {
+        fontSizeUp += step;
+        yield h1.style.fontSize = `${fontSizeUp}px`;
+    }
 });
 
-btnDown.addEventListener('click', function* () {
-    let fontSize = 14;
-    yield fontSize -= 2;
-    h1.style.fontSize = `${fontSize}px`;
-});
+
 
 // function* newFontGenerator(start = 14, end = 30, step = 2) {
 //     for (let fontSizeUp = start; fontSizeUp < end; fontSizeUp += step) {
