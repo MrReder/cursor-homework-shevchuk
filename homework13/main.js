@@ -104,6 +104,7 @@ async function getPlanets() {
     async function getNextPlanets() {
         if (currentPlanetsPage < 6) {
             currentPlanetsPage++
+            planets.innerHTML = " ";
             const res = await axios.get(`https://swapi.dev/api/planets/?page=${currentPlanetsPage}`);
             return res.data.results.forEach((e) => {
                 for (let i = 0; i < res.data.results.length; i++) {
