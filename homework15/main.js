@@ -35,27 +35,22 @@ console.log(idGenerator.next().value);
 
 const btnUp = document.querySelector('#up-btn');
 const btnDown = document.querySelector('#down-btn');
+const h1 = document.querySelector('h1');
 function* newFontGenerator(start = 14, end = 30, step = 2) {
     for (let fontSizeUp = start; fontSizeUp < end; fontSizeUp += step) {
-        yield fontSizeUp;
+        yield setInterval(() => {
+            h1.style.fontSize = `${fontSizeUp}px`;
+        }, 1000);
     }
-    for (let fontSizeDown = start; fontSizeDown < end && fontSizeDown > 10; fontSizeDown -= step) {
-        yield fontSizeDown;
+    for (let fontSizeDown = start; fontSizeDown < end && fontSizeDown > 12; fontSizeDown -= step) {
+        yield setInterval(() => {
+            h1.style.fontSize = `${fontSizeDown}px`;
+        }, 1000);
     }
 
 }
 
 const fontGenerator = newFontGenerator();
-
-
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
-console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
