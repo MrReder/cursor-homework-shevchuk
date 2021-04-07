@@ -46,6 +46,8 @@ function* newFontGenerator(start = 14, end = 30, step = 2) {
 }
 
 const fontGenerator = newFontGenerator();
+
+
 console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
@@ -58,25 +60,6 @@ console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
 console.log(fontGenerator.next().value);
 
-// function* newFontGenerator(value) {
-//     let start = 14;
-//     let step = 2;
-//     let fontSize = start;
-//     if (value === 'up') {
-//         yield fontSize += step;
 
-//     } else if (value === 'down') {
-//         yield fontSize -= step;
-//     }
-// }
-// const fontSizeUp = newFontGenerator('up');
-// const fontSizeDown = newFontGenerator('down');
-
-// btnUp.addEventListener('click', function () {
-//     document.body.style.fontSize = `${fontSizeUp.next().value}px`;
-// });
-// btnDown.addEventListener('click', function () {
-//     document.body.style.fontSize = `${fontSizeUp.next().value}px`
-// });
 
 
