@@ -33,19 +33,50 @@ console.log(idGenerator.next().value);
 //     }
 // })
 
-window.addEventListener('click', function* (e) {
-    const btnUp = document.querySelector('#up-btn');
-    const btnDown = document.querySelector('#down-btn');
-    const increaseFontSize = function* (start = 14, end = 18, step = 2) {
-        let fontSize = start;
-        if (btnUp) {
-            fontSize += step;
-            yield h1.style.fontSize = `${fontSize}px`;
-        } else if (btnDown) {
-            fontSize -= step;
-            yield h1.style.fontSize = `${fontSize}px`;
-        }
-
-        increaseFontSize(14);
+const btnUp = document.querySelector('#up-btn');
+const btnDown = document.querySelector('#down-btn');
+function* newFontGenerator(start = 14, end = 30, step = 2) {
+    for (let fontSizeUp = start; fontSizeUp < end; fontSizeUp += step) {
+        yield fontSizeUp;
     }
-})
+    for (let fontSizeDown = start; fontSizeDown < end && fontSizeDown > 10; fontSizeDown -= step) {
+        yield fontSizeDown;
+    }
+
+}
+
+const fontGenerator = newFontGenerator();
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+console.log(fontGenerator.next().value);
+
+// function* newFontGenerator(value) {
+//     let start = 14;
+//     let step = 2;
+//     let fontSize = start;
+//     if (value === 'up') {
+//         yield fontSize += step;
+
+//     } else if (value === 'down') {
+//         yield fontSize -= step;
+//     }
+// }
+// const fontSizeUp = newFontGenerator('up');
+// const fontSizeDown = newFontGenerator('down');
+
+// btnUp.addEventListener('click', function () {
+//     document.body.style.fontSize = `${fontSizeUp.next().value}px`;
+// });
+// btnDown.addEventListener('click', function () {
+//     document.body.style.fontSize = `${fontSizeUp.next().value}px`
+// });
+
+
