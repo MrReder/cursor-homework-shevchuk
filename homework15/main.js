@@ -45,7 +45,7 @@ window.addEventListener('click', function* (e) {
             fontSize -= step;
             yield h1.style.fontSize = `${fontSize}px`;
         }
-        increaseFontSize(14, 18, 2);
 
+        increaseFontSize(14);
     }
 })
