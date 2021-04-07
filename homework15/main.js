@@ -16,38 +16,19 @@ console.log(idGenerator.next().value);
 
 
 
-// window.addEventListener('keydown', function* (e) {
-//     const btnUp = document.querySelector(`#up-btn[data-key="${e.keyCode}"]`);
-//     const btnDown = document.querySelector(`#down-btn[data-key="${e.keyCode}"]`);
-//     const increaseFontSize = function* (start = 14, end = 18, step = 2) {
-//         let fontSize = start;
-//         if (btnUp) {
-//             fontSize += step;
-//             yield document.body.h2.style.fontSize = `${fontSize}px`;
-//         } else if (btnDown) {
-//             fontSize -= step;
-//             yield document.body.h2.style.fontSize = `${fontSize}px`;
-//         }
-//         increaseFontSize()
-
-//     }
-// })
-
 const btnUp = document.querySelector('#up-btn');
 const btnDown = document.querySelector('#down-btn');
 const h1 = document.querySelector('h1');
-btnUp.addEventListener('click', function* newFontGenerator(e) {
-    e = 14;
-    let fontSize = e;
-    fontSize += 2;
-    yield h1.style.fontSize = `${fontSize}px`;
+btnUp.addEventListener('click', function* () {
+    let fontSize = 14;
+    yield fontSize += 2;
+    h1.style.fontSize = `${fontSize}px`;
 });
 
-btnDown.addEventListener('click', function* newFontGenerator(e) {
-    e = 14;
-    let fontSize = e;
-    fontSize -= 2;
-    yield h1.style.fontSize = `${fontSize}px`;
+btnDown.addEventListener('click', function* () {
+    let fontSize = 14;
+    yield fontSize -= 2;
+    h1.style.fontSize = `${fontSize}px`;
 });
 
 // function* newFontGenerator(start = 14, end = 30, step = 2) {
