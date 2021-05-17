@@ -88,7 +88,12 @@ class Student {
         this.fullName = fullName;
         this.isActiveStudent = true;
         this.getInfo = function () {
-            return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`;
+            if (!this.isActiveStudent) {
+                return null
+            } else {
+                return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`
+            }
+
         };
         this.marks = marks;
         this.getAverageMark = function () {
@@ -103,18 +108,27 @@ class Student {
 
         };
         this.recovery = function () {
-            if (this.isActiveStudent) {
+            if (this.isActiveStudent === true) {
                 return this.marks = marks;
             }
         }
     }
     //3
     get getMarks() {
-        return this.marks;
+        if (!this.isActiveStudent) {
+            return null
+        } else {
+            return this.marks;
+        }
+
     }
     //4
     set setMarks(mark) {
-        return this.marks.push(mark);
+        if (!this.isActiveStudent) {
+            return null
+        } else {
+            return this.marks.push(mark);
+        }
     }
 
 
