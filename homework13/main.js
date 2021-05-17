@@ -13,8 +13,11 @@ const persons = document.querySelector('.people-wrapper');
 const planets = document.querySelector('.planets-wrapper');
 
 async function getNFO() {
+    persons.innerHTML = ' ';
     const backgroundSound = document.querySelector('audio');
     backgroundSound.play();
+    const previousBackgroundSound = document.querySelector(".planets-sound");
+    previousBackgroundSound.pause();
     getNFOBtn.style.display = 'none';
     getPlanetsBtn.style.display = 'block';
     persons.style.display = 'grid';
@@ -79,7 +82,7 @@ async function getNFO() {
 
 async function getPlanets() {
     const previousBackgroundSound = document.querySelector(".info-sound");
-    previousBackgroundSound.remove();
+    previousBackgroundSound.pause();
     const backgroundSound = document.querySelector(".planets-sound");
     backgroundSound.play();
     persons.style.display = "none";
@@ -117,51 +120,7 @@ async function getPlanetsFromServer(currentPage) {
     return res.data.results;
 }
 
-// async function getPlanets() {
-//     const previousBackgroundSound = document.querySelector('.info-sound');
-//     previousBackgroundSound.remove();
-//     const backgroundSound = document.querySelector('.planets-sound');
-//     backgroundSound.play();
-//     persons.style.display = 'none';
-//     getPlanetsBtn.style.display = 'none';
-//     getNFOBtn.style.display = 'block';
-//     const episode5DataPlanets = await axios.get('https://swapi.dev/api/planets/')
-//         .then((res) => {
-//             return res.data.results;
-//         });
 
-//     planets.style.display = 'block';
-//     episode5DataPlanets.forEach((e) => {
-//         for (let i = 0; i < episode5DataPlanets.length; i++) {
-//             const planet = document.createElement('p');
-//             planet.classList.add('single-planet');
-//             planets.append(planet);
-//             return planet.innerText = e.name;
-//         }
-//     })
-
-//     nextBtn.style.display = 'block';
-//     nextBtn.addEventListener('click', getNextPlanets);
-
-//     async function getNextPlanets() {
-//         if (currentPlanetsPage < 6) {
-//             currentPlanetsPage++
-//             planets.innerHTML = " ";
-//             const res = await axios.get(`https://swapi.dev/api/planets/?page=${currentPlanetsPage}`);
-//             return res.data.results.forEach((e) => {
-//                 for (let i = 0; i < res.data.results.length; i++) {
-//                     const planet = document.createElement('p');
-//                     planet.classList.add('single-planet');
-//                     planets.append(planet);
-//                     return planet.innerText = e.name;
-//                 }
-//             })
-//         } else {
-//             nextBtn.style.display = 'none';
-//         }
-//         console.log(currentPlanetsPage);
-//     }
-// }
 
 
 
